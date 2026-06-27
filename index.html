@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<!-- Favicon -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/><link href="favicon.ico" rel="icon" sizes="any"/><link href="img/favicon/favicon-48x48.png" rel="icon" sizes="48x48" type="image/png"/><link href="img/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/><link href="img/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/><link href="site.webmanifest" rel="manifest"/><meta content="#8c3ff4" name="theme-color"/>
+<!-- PNG 다양한 사이즈 (Retina 대응) -->
+<!-- Apple 터치 아이콘 -->
+<!-- 알밤09 로컬 폰트 적용 -->
+<link href="css/master.css?ver=20260530-nightarticle" rel="stylesheet"/>
+<link href="css/index-inline-seo.css?ver=20260609-seofix" rel="stylesheet"/>
+<!-- SEO Meta -->
+<title>광주룸빵여지도 | 광주가라오케·광주노래방·광주노래홀·광주유흥주점</title>
+<link href="https://www.albam09.com/" rel="canonical"/>
+<meta content="광주룸빵여지도는 광주가라오케·노래방·노래홀·유흥주점 정보를 지역별로 정리한 안내 페이지입니다." name="description"/>
+<meta content="광주룸빵여지도, 광주가라오케, 광주노래방, 광주노래홀, 광주유흥주점, 광주유흥지도" name="keywords"/>
+<meta content="09b294d59f521bf7639cc999c587ff46f7fc558c" name="naver-site-verification"/>
+<!-- Open Graph (SNS 공유 시 노출 정보) -->
+<meta content="website" property="og:type"/>
+<!-- Twitter Card (트위터 공유 시 노출 정보) -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://www.albam09.com/" name="twitter:url"/>
+<!-- Sitemap, robots, google verify -->
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<!-- Analytics -->
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KG9Z9ZBBGD');
+    </script>
+<script>
+/* 현재 지역 탭 표시 보정: 폴더형 URL(/page/karaoke1)에서도 마지막 실제 경로를 정확히 읽음 */
+document.addEventListener('DOMContentLoaded', function () {
+  var path = window.location.pathname || '/';
+  var parts = path.split('/').filter(Boolean);
+  var cur = 'index';
+
+  if (parts.length > 0) {
+    cur = parts[parts.length - 1];
+    if (/^index\.html?$/i.test(cur) && parts.length > 1) {
+      cur = parts[parts.length - 2];
+    }
+    cur = cur.replace(/\.html?$/i, '');
+  }
+
+  if (!cur || cur === 'index.html') cur = 'index';
+
+  document.querySelectorAll('.area-list li[data-page]').forEach(function (li) {
+    var isCurrent = li.getAttribute('data-page') === cur;
+    li.classList.toggle('current', isCurrent);
+    if (isCurrent) {
+      li.setAttribute('aria-current', 'page');
+    } else {
+      li.removeAttribute('aria-current');
+    }
+  });
+});
+</script>
+<!-- JS -->
+<script defer="" src="js/lib/moment-min.js"></script>
+<script defer="" src="js/lib/moment-timezone-ko.js"></script>
+<!-- 🚩 Socket.io 라이브러리를 제외했으므로 global.js에서 Socket.io 관련 코드를 제거하거나 주석 처리해야 합니다! -->
+<script defer="" src="js/global.js?ver=20260523-mobilebox"></script>
+<meta content="광주룸빵여지도 | 광주가라오케·광주노래방·광주노래홀·광주유흥주점" property="og:title"/>
+<meta content="광주룸빵여지도는 광주가라오케·노래방·노래홀·유흥주점 정보를 지역별로 정리한 안내 페이지입니다." property="og:description"/>
+<meta content="https://www.albam09.com/" property="og:url">
+<meta content="ko_KR" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="광주룸빵여지도 | 광주가라오케·광주노래방·광주노래홀·광주유흥주점" name="twitter:title"/>
+<meta content="광주룸빵여지도는 광주가라오케·노래방·노래홀·유흥주점 정보를 지역별로 정리한 안내 페이지입니다." name="twitter:description"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "광주룸빵여지도 | 광주가라오케·광주노래방·광주노래홀·광주유흥주점",
+  "description": "광주룸빵여지도는 광주가라오케·노래방·노래홀·유흥주점 정보를 지역별로 정리한 안내 페이지입니다.",
+  "url": "https://www.albam09.com/",
+  "inLanguage": "ko-KR"
+}</script>
+<meta content="광주룸빵여지도" property="og:site_name"><meta content="광주룸빵여지도" name="application-name"/><meta content="https://www.albam09.com/img/og-image.jpg" property="og:image"/><meta content="https://www.albam09.com/img/og-image.jpg" property="og:image:secure_url"/><meta content="image/jpeg" property="og:image:type"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"><meta content="https://www.albam09.com/img/og-image.jpg" name="twitter:image"/></meta></meta></meta><style id="albam09-search-position-h1-font-fix">
+/* 20260622: 통합검색창을 index와 동일하게 히어로 아래/목록 위에 고정하고 H1을 둥근 최신 한글 웹폰트로 보강 */
+main > .global-place-search{
+  max-width:980px!important;
+  width:calc(100% - 32px)!important;
+  margin:22px auto 34px!important;
+  padding:0!important;
+  position:relative!important;
+  z-index:5!important;
+}
+main > section[title] + .global-place-search{
+  margin-top:22px!important;
+}
+.global-place-search__form,
+.global-place-search__input,
+.global-place-search__button{
+  font-family:var(--albam09-font-main)!important;
+}
+.global-place-search__button{
+  font-weight:850!important;
+}
+main section[title] h1,
+section[title] h1,
+main h1{
+  font-family:var(--albam09-font-main)!important;
+  font-weight:400!important;
+  letter-spacing:-.025em!important;
+  text-rendering:optimizeLegibility!important;
+}
+main section[title] h1,
+section[title] h1{
+  font-size:clamp(1.85rem,4.25vw,3.15rem)!important;
+  line-height:1.15!important;
+}
+@media (max-width:640px){
+  main > .global-place-search{width:calc(100% - 22px)!important;margin:18px auto 28px!important;}
+  main section[title] h1,section[title] h1{font-size:clamp(2.02rem,9.2vw,2.72rem)!important;line-height:1.12!important;}
+}
+</style>
+<link href="css/albam09-local-font.css?v=20260622-final" rel="stylesheet"/><link as="font" crossorigin="" href="fonts/Albam09Cute.ttf?v=20260622-font-final" rel="preload" type="font/ttf"/>
+<link href="css/albam09-final-force.css?v=20260622g-nav-nearest" rel="stylesheet"/><link href="css/index-mobile-pc-final-20260622.css?v=20260622g-index-same-nav-nearest" rel="stylesheet"/>
+<link href="css/footer-contact-20260626.css?v=20260626a" rel="stylesheet"/>
+
+<style id="cloudtype-local-safe-fallback">
+html{font-size:16px}body{margin:0;background:#fff;color:#181525}a{color:inherit;text-decoration:none}header{max-width:1180px;margin:54px auto 22px;padding:0 18px}header>a{display:inline-flex;align-items:center;gap:12px;color:#9b3cff;font-weight:900;font-size:clamp(1.7rem,3vw,2.6rem)}header svg{width:42px;height:42px}.area-wrap{max-width:1180px;margin:0 auto 36px;padding:0 18px}.area-list ul{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}.area-list a{display:flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border:1px solid #e7e4ec;border-radius:10px;background:#fff;font-weight:900;box-shadow:0 4px 14px rgba(0,0,0,.04)}.area-list .current a{background:linear-gradient(135deg,#9b49ff,#8233e6);color:#fff;border-color:transparent}main{max-width:1180px;margin:0 auto;padding:0 18px}main>section[title]{border-radius:18px;background:linear-gradient(135deg,#8c00b5,#ef2363);color:#fff;text-align:center;padding:82px 38px;margin:0 auto 42px;box-shadow:0 14px 34px rgba(89,25,126,.18)}main>section[title] h1{font-size:clamp(3rem,6vw,5.2rem);line-height:1.08;margin:0 0 26px}.hero-keyline{font-size:clamp(1.2rem,2vw,1.55rem);font-weight:900}.hero-desc{font-size:clamp(1.08rem,1.7vw,1.35rem);font-weight:800;line-height:1.8}.global-place-search{max-width:1080px;margin:24px auto 54px}.global-place-search__form{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid #ead9ff;border-radius:18px;box-shadow:0 10px 28px rgba(67,28,91,.12);padding:10px}.global-place-search__input{flex:1;border:0;outline:0;font-size:1.1rem;font-weight:800;padding:14px}.global-place-search__button{border:0;border-radius:14px;background:#150820;color:#fff;font-size:1.1rem;font-weight:900;padding:14px 24px}section[list] h2{text-align:center;font-size:clamp(2.1rem,4vw,3.2rem);margin:28px 0;color:#a100b5}section[list] [wrapper]{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}section[list] ul{list-style:none;min-height:130px;margin:0;padding:30px;border-radius:18px;background:#fff;box-shadow:0 16px 32px rgba(100,44,125,.12);border:1px solid #f1e6fb;overflow:hidden}section[list] h3{text-align:center;font-size:1.7rem;margin:0 0 16px;color:#9b009a}section[list] li{font-size:1.05rem;font-weight:800;color:#8d8da0}.nearest-float,.nearby-floating,.nearby-fab{position:fixed!important;right:24px!important;bottom:24px!important;z-index:9999!important}
+@media(max-width:700px){header{margin-top:42px}.area-wrap{margin-bottom:28px}.area-list ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.area-list a{min-height:44px;padding:0 8px;font-size:1rem}main>section[title]{padding:56px 20px;margin-bottom:28px}main>section[title] h1{font-size:2.65rem}.global-place-search__form{border-radius:15px}.global-place-search__button{padding:12px 15px}section[list] [wrapper]{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}section[list] ul{padding:18px 10px;min-height:104px;border-radius:16px}section[list] h3{font-size:1.2rem}.nearest-float,.nearby-floating,.nearby-fab{right:16px!important;bottom:18px!important}}
+</style>
+
+</head>
+<body data-current-page="index">
+<header>
+<a href="index.html">
+<div logo="">
+<div svg-box="">
+<svg aria-hidden="true" class="svg-inline--fa fa-map fa-w-18" data-icon="map" data-prefix="far" focusable="false" role="img" viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M560.02 32c-1.96 0-3.98.37-5.96 1.16L384.01 96H384L212 35.28A64.252 64.252 0 0 0 191.76 32c-6.69 0-13.37 1.05-19.81 3.14L20.12 87.95A32.006 32.006 0 0 0 0 117.66v346.32C0 473.17 7.53 480 15.99 480c1.96 0 3.97-.37 5.96-1.16L192 416l172 60.71a63.98 63.98 0 0 0 40.05.15l151.83-52.81A31.996 31.996 0 0 0 576 394.34V48.02c0-9.19-7.53-16.02-15.98-16.02zM224 90.42l128 45.19v285.97l-128-45.19V90.42zM48 418.05V129.07l128-44.53v286.2l-.64.23L48 418.05zm480-35.13l-128 44.53V141.26l.64-.24L528 93.95v288.97z" fill="#9349ff"></path>
+</svg>
+</div>
+<div data-title="">광주룸빵여지도</div>
+</div>
+</a>
+</header>
+<div class="area-wrap"><nav class="area-list">
+<ul>
+<li aria-current="page" class="current" data-page="index"><a href="index.html">홈</a></li>
+<li data-page="karaoke1"><a href="page/karaoke1.html">상무지구</a></li>
+<li data-page="karaoke2"><a href="page/karaoke2.html">광천동 · 금호동</a></li>
+<li data-page="karaoke3"><a href="page/karaoke3.html">신안동</a></li>
+<li data-page="karaoke4"><a href="page/karaoke4.html">용봉동</a></li>
+<li data-page="karaoke5"><a href="page/karaoke5.html">첨단지구</a></li>
+<li data-page="karaoke6"><a href="page/karaoke6.html">목포</a></li>
+<li data-page="karaoke7"><a href="page/karaoke7.html">동구</a></li>
+<li data-page="karaoke8"><a href="page/karaoke8.html">남구</a></li>
+<li data-page="etc"><a href="page/etc.html">기타 업소</a></li>
+</ul>
+</nav></div>
+<main class="daum-wm-content">
+<section title="">
+<h1 class="daum-wm-title">광주룸빵여지도</h1><p class="hero-keyline">광주가라오케 광주노래방 광주노래홀</p>
+<p class="daum-wm-content hero-desc">광주룸빵여지도는 광주가라오케, 광주노래방, 광주노래홀, 광주유흥주점 정보를 지역별 목록과 전화 문의 동선 중심으로 정리한 메인 안내 페이지입니다.</p>
+<p>지자체에 등록된 합법 1·2종 주점만 안내합니다.</p>
+</section><section aria-label="업소 통합검색" class="global-place-search" role="search"><form autocomplete="off" class="global-place-search__form"><span aria-hidden="true" class="global-place-search__icon">⌕</span><input aria-label="업소명 또는 지역명 검색" class="global-place-search__input" inputmode="search" placeholder="업소명·지역명 검색 후 바로 이동" type="search"/><button class="global-place-search__button" type="submit">검색</button></form><div class="global-place-search__suggestions" hidden=""></div></section>
+<section itemscope="" itemtype="http://schema.org/ItemList" list="">
+<h2>업종 목록</h2>
+<div wrapper=""><ul class="rotating-list-container" data-card-href="page/karaoke1.html" id="karaoke1-list" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><h3><a href="page/karaoke1.html">서구1(13개)</a></h3><meta content="1" itemprop="position"/><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="7seven 상세페이지 보기" href="place/7seven.html" itemprop="url"><span itemprop="name">7seven</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="강아지 상세페이지 보기" href="place/puppy.html" itemprop="url"><span itemprop="name">강아지</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="기생 상세페이지 보기" href="place/gisaeng.html" itemprop="url"><span itemprop="name">기생</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="달리는토끼 상세페이지 보기" href="place/running-rabbit.html" itemprop="url"><span itemprop="name">달리는토끼</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="러시아퍼블릭 상세페이지 보기" href="place/russian-public.html" itemprop="url"><span itemprop="name">러시아퍼블릭</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="로얄 상세페이지 보기" href="place/royal.html" itemprop="url"><span itemprop="name">로얄</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="로엘vip 상세페이지 보기" href="place/roel-vip.html" itemprop="url"><span itemprop="name">로엘vip</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="롤렉스 상세페이지 보기" href="place/rolex.html" itemprop="url"><span itemprop="name">롤렉스</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="루비룸카페 상세페이지 보기" href="place/ruby-room-cafe.html" itemprop="url"><span itemprop="name">루비룸카페</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="룸꽃사슴 상세페이지 보기" href="place/room-flower-deer.html" itemprop="url"><span itemprop="name">룸꽃사슴</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="룸마이마이 상세페이지 보기" href="place/room-my-my.html" itemprop="url"><span itemprop="name">룸마이마이</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="룸미인 상세페이지 보기" href="place/room-beauty.html" itemprop="url"><span itemprop="name">룸미인</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="플렉스멤버쉽 상세페이지 보기" href="place/flex-membership.html" itemprop="url"><span itemprop="name">플렉스멤버쉽</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li></ul><ul class="rotating-list-container" data-card-href="page/karaoke2.html" id="karaoke2-list" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><h3><a href="page/karaoke2.html">서구2(12개)</a></h3><meta content="2" itemprop="position"/><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="미술관 상세페이지 보기" href="place/art-gallery.html" itemprop="url"><span itemprop="name">미술관</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="샬루트 상세페이지 보기" href="place/salute.html" itemprop="url"><span itemprop="name">샬루트</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="심플퍼블릭 상세페이지 보기" href="place/simple-public.html" itemprop="url"><span itemprop="name">심플퍼블릭</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="왕가구조선 상세페이지 보기" href="place/wangga-joseon.html" itemprop="url"><span itemprop="name">왕가구조선</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="유튜브 상세페이지 보기" href="place/youtube.html" itemprop="url"><span itemprop="name">유튜브</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="은밀한그곳 상세페이지 보기" href="place/secret-place.html" itemprop="url"><span itemprop="name">은밀한그곳</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="의자왕 상세페이지 보기" href="place/chair-king.html" itemprop="url"><span itemprop="name">의자왕</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="조땅 상세페이지 보기" href="place/jottang.html" itemprop="url"><span itemprop="name">조땅</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="티파니 상세페이지 보기" href="place/tiffany.html" itemprop="url"><span itemprop="name">티파니</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="페이스 상세페이지 보기" href="place/face.html" itemprop="url"><span itemprop="name">페이스</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="픽스 상세페이지 보기" href="place/fix.html" itemprop="url"><span itemprop="name">픽스</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="홈런 상세페이지 보기" href="place/homerun.html" itemprop="url"><span itemprop="name">홈런</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 서구" itemprop="addressRegion"/></span></li></ul><ul class="rotating-list-container" data-card-href="page/karaoke4.html" id="karaoke4-list" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><h3><a href="page/karaoke4.html">북구1(8개)</a></h3><meta content="3" itemprop="position"/><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="top탑 상세페이지 보기" href="place/top.html" itemprop="url"><span itemprop="name">top탑</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 북구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="고양이노래홀 상세페이지 보기" href="place/cat-songhall.html" itemprop="url"><span itemprop="name">고양이노래홀</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 북구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="넘버원노래홀 상세페이지 보기" href="place/numberone-songhall.html" itemprop="url"><span itemprop="name">넘버원노래홀</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 북구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="달콤노래방 상세페이지 보기" href="place/sweet-karaoke.html" itemprop="url"><span itemprop="name">달콤노래방</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 북구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="명품노래홀 상세페이지 보기" href="place/luxury-songhall.html" itemprop="url"><span itemprop="name">명품노래홀</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 북구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="백프로노래홀 상세페이지 보기" href="place/hundred-percent-songhall.html" itemprop="url"><span itemprop="name">백프로노래홀</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 북구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="보스 상세페이지 보기" href="place/boss.html" itemprop="url"><span itemprop="name">보스</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 북구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="빙고노래홀 상세페이지 보기" href="place/bingo-songhall.html" itemprop="url"><span itemprop="name">빙고노래홀</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 북구" itemprop="addressRegion"/></span></li></ul><ul class="rotating-list-container" data-card-href="page/karaoke3.html" id="karaoke3-list" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><h3><a href="page/karaoke3.html">북구2(9개)</a></h3><meta content="4" itemprop="position"/><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="빠담빠담 상세페이지 보기" href="place/padam-padam.html" itemprop="url"><span itemprop="name">빠담빠담</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 북구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="심쿵노래홀 상세페이지 보기" href="place/heart-songhall.html" itemprop="url"><span itemprop="name">심쿵노래홀</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 북구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="여우노래홀 상세페이지 보기" href="place/fox-songhall.html" itemprop="url"><span itemprop="name">여우노래홀</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 북구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="일번노래홀 상세페이지 보기" href="place/ilbeon-songhall.html" itemprop="url"><span itemprop="name">일번노래홀</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 북구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="첫번째 상세페이지 보기" href="place/first.html" itemprop="url"><span itemprop="name">첫번째</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 북구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="쿵쿵따노래홀 상세페이지 보기" href="place/kungkungtta-songhall.html" itemprop="url"><span itemprop="name">쿵쿵따노래홀</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 북구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="퀸 상세페이지 보기" href="place/queen.html" itemprop="url"><span itemprop="name">퀸</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 북구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="태후노래홀 상세페이지 보기" href="place/taehoo-songhall.html" itemprop="url"><span itemprop="name">태후노래홀</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 북구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="홍노래홀 상세페이지 보기" href="place/hong-songhall.html" itemprop="url"><span itemprop="name">홍노래홀</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 북구" itemprop="addressRegion"/></span></li></ul><ul class="rotating-list-container" data-card-href="page/karaoke5.html" id="karaoke5-list" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><h3><a href="page/karaoke5.html">광산구 (6개)</a></h3><meta content="5" itemprop="position"/><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="K-1 상세페이지 보기" href="place/K-1.html" itemprop="url"><span itemprop="name">K-1</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 광산구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="그래음악홀 상세페이지 보기" href="place/geurae-music-hall.html" itemprop="url"><span itemprop="name">그래음악홀</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 광산구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="백악관 상세페이지 보기" href="place/white-house.html" itemprop="url"><span itemprop="name">백악관</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 광산구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="짱노래홀 상세페이지 보기" href="place/zzang-songhall.html" itemprop="url"><span itemprop="name">짱노래홀</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 광산구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="첨단아이 상세페이지 보기" href="place/cheomdan-i.html" itemprop="url"><span itemprop="name">첨단아이</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 광산구" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="킹노래홀 상세페이지 보기" href="place/king-songhall.html" itemprop="url"><span itemprop="name">킹노래홀</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="광주" itemprop="addressLocality"/><meta content="광주 광산구" itemprop="addressRegion"/></span></li></ul><ul class="rotating-list-container" data-card-href="page/karaoke6.html" id="karaoke6-list" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><h3><a href="page/karaoke6.html">목포 (2개)</a></h3><meta content="6" itemprop="position"/><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="파트너 상세페이지 보기" href="place/partner.html" itemprop="url"><span itemprop="name">파트너</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="목포" itemprop="addressLocality"/><meta content="전라남도" itemprop="addressRegion"/></span></li><li itemprop="mainEntity" itemscope="" itemtype="http://schema.org/LocalBusiness"><a aria-label="오라클가요주점 상세페이지 보기" href="place/oracle-karaoke-pub.html" itemprop="url"><span itemprop="name">오라클가요주점</span></a><meta content="Karaoke" itemprop="category"/><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><meta content="목포" itemprop="addressLocality"/><meta content="전라남도" itemprop="addressRegion"/></span></li></ul><ul data-card-href="page/karaoke7.html" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><h3><a href="page/karaoke7.html">동구 (0개)</a></h3><meta content="7" itemprop="position"/><li empty="">현재 등록된 업소가 없습니다</li></ul><ul data-card-href="page/karaoke8.html" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><h3><a href="page/karaoke8.html">남구 (0개)</a></h3><meta content="8" itemprop="position"/><li empty="">현재 등록된 업소가 없습니다</li></ul><ul data-card-href="page/etc.html" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><h3><a href="page/etc.html">기타 (0개)</a></h3><meta content="9" itemprop="position"/><li empty="">현재 등록된 업소가 없습니다</li></ul><div telegram-section=""><ul class="contact-list"><li class="telegram-mini" empty=""><a href="https://telegram.me/medic0111" rel="noopener" target="_blank" telegram="">텔레그램 문의</a></li></ul></div></div></section>
+
+<section map="">
+<h2>위치 안내 지도</h2>
+<div class="map-placeholder" style="width:100%;height:500;display:block;border:1px solid #e1e1e1;border-radius:6px;overflow:hidden;background:#f7f7f7;">
+<a aria-label="광주룸빵여지도 지도 새 창으로 열기" href="https://www.google.com/maps/d/u/0/embed?mid=1Vr5ha_W5wwJ0dzcA3LMfBx47sIMYMs4&amp;ehbc=2E312F" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;text-decoration:none;color:inherit;" target="_blank" title="광주룸빵여지도 지도 새 창으로 열기">
+<svg aria-hidden="true" height="64" viewbox="0 0 24 24" width="64" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM12 11.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="#cfcfcf"></path>
+</svg>
+<span class="sr-only">광주룸빵여지도 지도 새 창으로 열기</span></a>
+</div>
+</section>
+<section class="insta-guide real-hotspot-guide">
+<div class="insta-header">
+<h2>광주 실제 인스타 핫스팟</h2>
+<p>광주 전체 페이지는 상무·첨단·충장로·봉선동에서 실제로 저장/방문 후보가 되는 스팟만 골라 연결했습니다.</p>
+</div>
+<div class="insta-grid">
+<div class="insta-card hotspot-card">
+<div class="bg"></div>
+<div class="text">
+            존제의존재
+            <div class="sub">상무누리로 대형 감성카페, 김대중컨벤션센터역 동선에 맞는 포토 스팟 · 눌러서 위치 확인</div>
+</div>
+<a class="hit" href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%A1%B4%EC%A0%9C%EC%9D%98%EC%A1%B4%EC%9E%AC" rel="noopener" target="_blank">존제의존재 위치 보기</a>
+</div>
+<div class="insta-card hotspot-card">
+<div class="bg"></div>
+<div class="text">
+            딥그레이
+            <div class="sub">첨단지구 무채색 감성 카페로 사진 찍기 좋은 분위기 스팟 · 눌러서 위치 확인</div>
+</div>
+<a class="hit" href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%B2%A8%EB%8B%A8%20%EB%94%A5%EA%B7%B8%EB%A0%88%EC%9D%B4%20%EC%B9%B4%ED%8E%98" rel="noopener" target="_blank">딥그레이 위치 보기</a>
+</div>
+<div class="insta-card hotspot-card">
+<div class="bg"></div>
+<div class="text">
+            쿠키빈
+            <div class="sub">충장로 쿠키 만들기 체험형 데이트 스팟 · 눌러서 위치 확인</div>
+</div>
+<a class="hit" href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%B6%A9%EC%9E%A5%EB%A1%9C%20%EC%BF%A0%ED%82%A4%EB%B9%88" rel="noopener" target="_blank">쿠키빈 위치 보기</a>
+</div>
+<div class="insta-card hotspot-card">
+<div class="bg"></div>
+<div class="text">
+            철이와수지 로스터스
+            <div class="sub">봉선동 북카페 분위기의 로스터리 감성 스팟 · 눌러서 위치 확인</div>
+</div>
+<a class="hit" href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EB%B4%89%EC%84%A0%EB%8F%99%20%EC%B2%A0%EC%9D%B4%EC%99%80%EC%88%98%EC%A7%80%20%EB%A1%9C%EC%8A%A4%ED%84%B0%EC%8A%A4" rel="noopener" target="_blank">철이와수지 로스터스 위치 보기</a>
+</div>
+</div>
+</section>
+<section aria-labelledby="seo-night-board-title-index-html" class="seo-article-board night-article-board" data-active-page="1" data-article-board="">
+<div class="seo-article-inner">
+<div class="seo-article-head"><div>
+<span class="seo-article-label">광주 전체 야간 검색</span>
+<h2 id="seo-night-board-title-index-html">광주 야간 검색 기사 게시판</h2>
+<p>광주노래방, 광주가라오케, 광주노래홀, 광주노래주점, 광주유흥주점 검색자가 실제로 궁금해하는 회식 후 2차 장소, 지역 이동, 전화 문의 기준을 짧은 기사형 카드로 정리했습니다.</p>
+</div><div aria-hidden="true" class="seo-article-page-indicator">1 / 3</div></div>
+<div class="seo-article-list">
+<a class="seo-article-card" data-board-page="1" href="page/karaoke1.html">
+<div class="seo-article-meta"><span>20대 검색</span><time datetime="2026-05-30">2026.05.30</time></div>
+<h3>20대가 밤 8시 이후 먼저 찾는 광주노래방</h3>
+<p>20대 남성은 약속이 늦게 잡힌 뒤 상무지구 주변에서 광주노래방, 광주가라오케 같은 직접 키워드로 빠르게 비교하는 경우가 많습니다. 지도보다 먼저 분위기, 전화 연결, 이동 거리, 현재 운영 여부를 한 번에 확인하려는 검색 의도가 강합니다.</p>
+</a>
+<a class="seo-article-card" data-board-page="1" href="page/karaoke5.html">
+<div class="seo-article-meta"><span>30대 회식</span><time datetime="2026-05-30">2026.05.30</time></div>
+<h3>30대 회식 후 이어지는 광주가라오케 검색 흐름</h3>
+<p>30대 남성은 퇴근과 회식 이후 상무지구에서 광주가라오케, 광주노래홀을 함께 비교하는 경우가 많습니다. 동료 이동 동선, 예약 가능 여부, 룸 형태 공간, 전화 문의 편의성이 핵심 기준입니다.</p>
+</a>
+<a class="seo-article-card" data-board-page="1" href="page/karaoke4.html">
+<div class="seo-article-meta"><span>40대 선택</span><time datetime="2026-05-30">2026.05.30</time></div>
+<h3>40대가 보는 광주노래주점 선택 기준</h3>
+<p>40대는 밤 9시 이후 갑자기 장소를 바꾸기보다 광주노래주점, 광주유흥주점처럼 업종과 지역을 붙여 안정적인 장소를 찾습니다. 시끄러운 분위기보다 조용한 이동, 전화 연결, 위치 확인이 검색 판단의 핵심입니다.</p>
+</a>
+<a class="seo-article-card" data-board-page="1" href="page/karaoke3.html">
+<div class="seo-article-meta"><span>50대 동선</span><time datetime="2026-05-30">2026.05.30</time></div>
+<h3>50대 남성이 찾는 조용한 광주노래홀 안내</h3>
+<p>50대 검색자는 상무지구 주변에서 광주노래홀와 광주노래주점를 비교하며 가격보다 접근성, 주차, 전화 문의 편의성을 먼저 봅니다. 알밤09 게시판은 야간에 급하게 찾는 사람도 지역별 흐름을 이해하기 쉽게 정리합니다.</p>
+</a>
+<a class="seo-article-card" data-board-page="1" href="page/karaoke2.html">
+<div class="seo-article-meta"><span>밤10시 이후</span><time datetime="2026-05-30">2026.05.30</time></div>
+<h3>밤 10시 이후 치평동에서 늘어나는 노래방 검색</h3>
+<p>밤 10시가 지나면 치평동 주변 검색어는 광주노래방, 광주노래홀, 광주노래주점처럼 바로 이동 가능한 업종 중심으로 좁혀집니다. 20대부터 50대까지 공통으로 보는 것은 거리, 분위기, 예약, 전화 버튼입니다.</p>
+</a>
+<a class="seo-article-card" data-board-page="2" href="page/karaoke7.html">
+<div class="seo-article-meta"><span>주말 밤</span><time datetime="2026-05-30">2026.05.30</time></div>
+<h3>주말 밤 광주 남성 검색어가 길어지는 이유</h3>
+<p>주말 밤에는 단순히 광주노래방만 치는 것이 아니라 상무지구 술집, 상무지구 노래주점, 상무지구 가라오케처럼 여러 단어를 붙여 검색합니다. 이는 목적지가 정해지지 않은 상태에서 분위기와 동선을 동시에 확인하려는 행동입니다.</p>
+</a>
+<a class="seo-article-card" data-board-page="2" href="page/karaoke8.html">
+<div class="seo-article-meta"><span>회식 후</span><time datetime="2026-05-30">2026.05.30</time></div>
+<h3>회식 후 광주유흥주점을 찾는 사람들의 공통점</h3>
+<p>회식이 끝난 뒤에는 광주유흥주점, 광주가라오케, 광주노래주점이 함께 검색됩니다. 30대와 40대는 이동 시간이 짧고 인원이 나뉘어도 찾기 쉬운 지역 페이지를 선호합니다.</p>
+</a>
+<a class="seo-article-card" data-board-page="2" href="page/etc.html">
+<div class="seo-article-meta"><span>노래홀</span><time datetime="2026-05-30">2026.05.30</time></div>
+<h3>늦은 밤 쌍촌동 근처 노래홀 검색 패턴</h3>
+<p>쌍촌동 근처에서는 밤 8시 이후 광주노래홀, 광주노래주점 검색이 반복됩니다. 남성 이용자는 후기보다 현재 가능한지, 전화가 바로 되는지, 같은 지역의 다른 업소와 비교 가능한지를 먼저 확인합니다.</p>
+</a>
+<a class="seo-article-card" data-board-page="2" href="page/karaoke1.html">
+<div class="seo-article-meta"><span>강한 키워드</span><time datetime="2026-05-30">2026.05.30</time></div>
+<h3>광주룸싸롱·광주셔츠룸 검색어를 과하게 쓰지 않는 이유</h3>
+<p>광주룸싸롱, 광주셔츠룸 같은 강한 키워드는 검색 수요가 있어도 페이지 전체에 반복하면 오히려 품질이 떨어져 보일 수 있습니다. 그래서 알밤09는 지역명, 노래방, 가라오케, 유흥주점 문맥 안에서 자연스럽게 다룹니다.</p>
+</a>
+<a class="seo-article-card" data-board-page="2" href="page/karaoke5.html">
+<div class="seo-article-meta"><span>야간문의</span><time datetime="2026-05-30">2026.05.30</time></div>
+<h3>광주 야간문의 키워드 정리</h3>
+<p>밤 시간대에는 광주노래방, 광주가라오케, 광주유흥주점, 예약문의, 전화연결, 위치확인 같은 실용 키워드가 함께 움직입니다. 이용자는 긴 설명보다 오늘 갈 수 있는지, 어디가 가까운지, 어떤 분위기인지 빠르게 알고 싶어합니다.</p>
+</a>
+<a class="seo-article-card" data-board-page="3" href="page/karaoke4.html">
+<div class="seo-article-meta"><span>혼자·단체</span><time datetime="2026-05-30">2026.05.30</time></div>
+<h3>혼자 찾는 검색과 단체가 찾는 검색의 차이</h3>
+<p>혼자 검색할 때는 광주노래방이나 광주가라오케처럼 짧은 단어가 많고, 단체 이동 때는 상무지구 회식, 상무지구 노래주점, 광주유흥주점처럼 조건이 붙습니다.</p>
+</a>
+<a class="seo-article-card" data-board-page="3" href="page/karaoke3.html">
+<div class="seo-article-meta"><span>비 오는 밤</span><time datetime="2026-05-30">2026.05.30</time></div>
+<h3>비 오는 밤에 늘어나는 가까운 노래방 검색</h3>
+<p>날씨가 좋지 않은 밤에는 멀리 이동하기보다 상무지구, 치평동, 쌍촌동 주변 광주노래방 검색이 늘어납니다. 이때 사용자는 사진보다 위치, 전화, 바로 이동 가능한 목록을 먼저 보고 결정합니다.</p>
+</a>
+<a class="seo-article-card" data-board-page="3" href="page/karaoke2.html">
+<div class="seo-article-meta"><span>키워드 조정</span><time datetime="2026-05-30">2026.05.30</time></div>
+<h3>광주풀싸롱·광주레깅스바 대신 안전하게 읽히는 문장 구성</h3>
+<p>광주풀싸롱, 광주레깅스바 같은 단어는 수요가 있어도 본사이트에서는 노골적으로 밀지 않고, 광주노래방, 광주가라오케, 광주유흥주점 중심의 안내 문장에 보조적으로만 배치하는 것이 좋습니다. 검색 노출과 사이트 신뢰도를 동시에 고려한 방식입니다.</p>
+</a>
+<a class="seo-article-card" data-board-page="3" href="page/karaoke7.html">
+<div class="seo-article-meta"><span>전화 버튼</span><time datetime="2026-05-30">2026.05.30</time></div>
+<h3>밤 11시 이후 광주에서 전화 버튼이 중요한 이유</h3>
+<p>밤 11시 이후 검색자는 긴 설명보다 광주노래방, 광주노래주점, 광주유흥주점을 확인한 뒤 바로 전화 연결을 찾습니다. 짧은 제목과 요약형 카드가 이 동선에 맞습니다.</p>
+</a>
+<a class="seo-article-card" data-board-page="3" href="page/karaoke8.html">
+<div class="seo-article-meta"><span>밤놀거리</span><time datetime="2026-05-30">2026.05.30</time></div>
+<h3>광주 회식 2차와 밤놀거리 검색을 함께 받는 구조</h3>
+<p>20대는 분위기와 사진, 30대는 회식 동선, 40대는 조용한 공간, 50대는 접근성과 전화 편의를 봅니다. 광주노래방, 광주가라오케, 광주노래홀, 광주노래주점 키워드를 지역별로 묶어 검색 의도를 넓게 받도록 구성했습니다.</p>
+</a>
+</div>
+<nav aria-label="기사 게시판 페이지 이동" class="seo-article-pagination">
+<button class="is-active" data-board-target="1" type="button">1페이지</button>
+<button data-board-target="2" type="button">2페이지</button>
+<button data-board-target="3" type="button">3페이지</button>
+</nav></div></section>
+<section aria-label="광주 회식 2차 노래방 가라오케 선택 기준" class="main-seo-guide"><h2>광주 회식 2차·노래방·가라오케 선택 기준</h2><p>광주에서 회식 후 2차 장소를 찾는 사람은 보통 상무지구가라오케, 치평동노래방, 쌍촌동노래주점, 광주룸노래방처럼 지역명과 업종명을 함께 검색합니다. 알밤09는 이 흐름에 맞춰 업소명, 가까운 위치, 전화 문의 동선을 한 화면에서 비교할 수 있게 정리했습니다.</p><p>상무지구는 치평동·쌍촌동 술자리 이후 이동이 많은 구간, 광천동·금호동은 유스퀘어와 서구 생활권, 신안동·용봉동은 북구권 야간 동선, 첨단지구는 광산구 모임과 회식 수요를 기준으로 나누었습니다.</p><p>광주밤문화, 광주야간업소, 광주노래홀, 광주유흥주점처럼 넓은 키워드로 들어온 방문자도 지역 탭을 누르면 가까운 노래방·가라오케·노래주점 후보를 비교하고 상세페이지에서 대표 사진과 문의 정보를 이어서 확인할 수 있습니다.</p><p>처음 방문한 고객은 검색창에 업소명이나 지역명을 입력하고, 자주 찾는 고객은 지역 카드에서 상무지구·광천동·금호동·신안동·용봉동·첨단지구·목포권을 바로 선택하면 됩니다.</p></section>
+</main>
+<footer class="site-footer-contact">
+<div copyright="">Copyright © 2025 광주룸빵여지도. All rights reserved.</div>
+<div aria-label="SNS 문의 링크" class="footer-sns-icons">
+<a aria-label="카카오톡 연결 준비" class="sns-kakao" data-sns="kakao" href="#" onclick="return false;">톡</a>
+<a aria-label="인스타그램 연결 준비" class="sns-insta" data-sns="instagram" href="#" onclick="return false;">IG</a>
+<a aria-label="텔레그램 문의" class="sns-telegram" data-sns="telegram" href="https://telegram.me/medic0111" rel="noopener" target="_blank">TG</a>
+</div>
+</footer>
+<div alert-wrapper="">
+<div alert="">
+<div text=""></div>
+<button alert-close="" type="button">닫기</button>
+</div>
+</div>
+<!-- 내 위치 기준 가까운 업소 TOP 12 사이드 패널 -->
+<div id="nearestPanel">
+<div class="nearest-header">
+</div>
+<ul id="nearestList"></ul>
+</div>
+<!-- 거리 기반 추천 스크립트 -->
+<!-- Rotating list slider (waterwheel continuous loop) -->
+<script id="albam-waterwheel-slider">
+document.addEventListener('DOMContentLoaded', function() {
+  function initializeWaterwheelList(listContainer, containerIndex) {
+    if (!listContainer) return;
+
+    var listItems = Array.prototype.slice.call(
+      listContainer.querySelectorAll('li[itemprop="mainEntity"]')
+    );
+
+    if (!listItems.length) return;
+
+    listItems.forEach(function(item) {
+      item.classList.remove('is-active', 'is-leaving');
+      item.style.display = 'block';
+    });
+
+    if (listItems.length === 1) {
+      listItems[0].classList.add('is-active');
+      return;
+    }
+
+    var currentIndex = 0;
+    var transitionMs = 640;
+    var intervalMs = 1320;
+    var timer = null;
+    var stopped = false;
+
+    listItems[currentIndex].classList.add('is-active');
+
+    function moveNext() {
+      if (stopped) return;
+
+      var currentItem = listItems[currentIndex];
+      var nextIndex = (currentIndex + 1) % listItems.length;
+      var nextItem = listItems[nextIndex];
+
+      currentItem.classList.remove('is-active');
+      currentItem.classList.add('is-leaving');
+
+      nextItem.classList.remove('is-leaving');
+      nextItem.classList.add('is-active');
+
+      window.setTimeout(function() {
+        currentItem.classList.remove('is-leaving');
+      }, transitionMs + 40);
+
+      currentIndex = nextIndex;
+      timer = window.setTimeout(moveNext, intervalMs);
+    }
+
+    // 카드들이 한꺼번에 딱딱 바뀌지 않도록 아주 작게 시작 타이밍을 분산
+    timer = window.setTimeout(moveNext, 520 + ((containerIndex || 0) % 3) * 150);
+
+    listContainer.addEventListener('mouseenter', function() {
+      stopped = true;
+      if (timer) window.clearTimeout(timer);
+    });
+
+    listContainer.addEventListener('mouseleave', function() {
+      if (!stopped) return;
+      stopped = false;
+      timer = window.setTimeout(moveNext, 520);
+    });
+  }
+
+  var allRotatingContainers = document.querySelectorAll('.rotating-list-container');
+  allRotatingContainers.forEach(function(container, idx) {
+    initializeWaterwheelList(container, idx);
+  });
+});
+</script>
+<script async="" data-albam09-nonblocking="true" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQ1Ia0Ngqa3DijkcMWbN6amgDh78-hu5M"></script><script defer="" src="js/places.js"></script><script>
+/* Geolocation timeout hardening (prevents frequent TIMEOUT on desktop/wifi) */
+(function(){
+  if (!('geolocation' in navigator)) return;
+  var geo = navigator.geolocation;
+  if (geo.__patched_for_timeout) return;
+  geo.__patched_for_timeout = true;
+
+  var origGet = geo.getCurrentPosition.bind(geo);
+  var origWatch = geo.watchPosition.bind(geo);
+
+  function normalize(opt){
+    opt = opt || {};
+    var timeout = (typeof opt.timeout === 'number') ? opt.timeout : 25000;
+    if (timeout < 15000) timeout = 25000;
+    return Object.assign({}, opt, {
+      enableHighAccuracy: (opt.enableHighAccuracy !== undefined) ? opt.enableHighAccuracy : true,
+      maximumAge: (typeof opt.maximumAge === 'number') ? opt.maximumAge : 0,
+      timeout: timeout
+    });
+  }
+
+  geo.getCurrentPosition = function(success, error, options){
+    return origGet(success, error, normalize(options));
+  };
+  geo.watchPosition = function(success, error, options){
+    return origWatch(success, error, normalize(options));
+  };
+})();
+</script>
+<script defer="" src="js/nearest.js?v=20260608-distancefix"></script><script defer="" src="js/top12-ui.js?v=20260608-distancefix"></script><script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof setupNearestPanel === 'function') {
+    setupNearestPanel('');
+  }
+  if (typeof openNearestPanel === 'function') {
+    var btn = document.getElementById('nearest-open-button');
+    if (!btn) {
+      btn = document.createElement('button');
+      btn.id = 'nearest-open-button';
+      btn.textContent = '가까운 업소 보기';
+      btn.setAttribute('aria-label', '내 위치 기준 가까운 업소 보기');
+      btn.style.width = '25%';
+      btn.style.minWidth = '140px';
+      btn.style.position = 'fixed';
+      btn.style.bottom = '80px';
+      btn.style.right = '12px';
+      btn.style.zIndex = '9998';
+      btn.style.background = '#C9B6FF';
+      btn.style.color = '#fff';
+      btn.style.border = 'none';
+      btn.style.borderRadius = '22px';
+      btn.style.padding = '10px 16px';
+      btn.style.fontSize = '13px';
+      btn.style.cursor = 'pointer';
+      document.body.appendChild(btn);
+    }
+    if (!btn.dataset.nearestBound) {
+      btn.dataset.nearestBound = '1';
+      btn.addEventListener('click', function () {
+        openNearestPanel('ALL');
+      });
+    }
+  }
+});
+</script>
+<script defer="" src="js/site-search.js"></script>
+<script id="albam-card-link-fix">
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('main section[list] div[wrapper] ul[data-card-href]').forEach(function(card){
+    /* 터치 오작동 방지: 카드 빈 공간은 더 이상 지역 페이지로 이동하지 않음 */
+    card.style.cursor = 'default';
+    card.setAttribute('data-touch-separated', 'true');
+
+    card.addEventListener('click', function(e){
+      var directLink = e.target.closest('a[href]');
+      if (directLink) return; // 지역명/업소명 링크 자체를 누른 경우는 원래 링크 그대로 이동
+
+      var activeBusiness = e.target.closest('li.is-active[itemprop="mainEntity"]');
+      if (activeBusiness && card.contains(activeBusiness)) {
+        var businessLink = activeBusiness.querySelector('a[href]');
+        if (businessLink) {
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.href = businessLink.getAttribute('href');
+          return;
+        }
+      }
+
+      // 카드 배경 터치는 이동하지 않게 막아 지역/업소 터치 영역을 명확히 분리
+      e.preventDefault();
+      e.stopPropagation();
+    });
+  });
+});
+</script>
+<script defer="" src="js/local-file-links.js"></script>
+<script id="seo-article-board-pagination-fix-20260530">
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('[data-article-board]').forEach(function(board){
+    var buttons = board.querySelectorAll('[data-board-target]');
+    var indicator = board.querySelector('.seo-article-page-indicator');
+    if(!buttons.length) return;
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var page = btn.getAttribute('data-board-target') || '1';
+        board.setAttribute('data-active-page', page);
+        buttons.forEach(function(b){ b.classList.toggle('is-active', b === btn); });
+        if(indicator) indicator.textContent = page + ' / ' + buttons.length;
+      });
+    });
+  });
+});
+</script>
+<script src="js/local-file-links.js"></script>
+<script defer="" src="js/site-search.js"></script><script defer="" src="js/albam09-ui-fix.js?v=20260622b"></script>
+</body>
+</html>
+<style id="albam09-h1-index-size-sync-20260622">
+/* 20260622: index H1과 모든 지역/상세 페이지 H1 글씨 크기를 같은 기준으로 강제 통일 */
+main section[title] h1,
+section[title] h1,
+.place-hero h1{
+  font-family:var(--albam09-font-main)!important;
+  font-size:clamp(1.85rem,4.25vw,3.15rem)!important;
+  line-height:1.15!important;
+  font-weight:400!important;
+  letter-spacing:-.025em!important;
+}
+@media (max-width:640px){
+  main section[title] h1,
+  section[title] h1,
+  .place-hero h1{
+    font-size:clamp(2.02rem,9.2vw,2.72rem)!important;
+    line-height:1.12!important;
+  }
+}
+</style>
+<style id="albam09-final-font-size-last">
+@font-face{font-family:'Albam09Cute';src:url('fonts/Albam09Cute.ttf?v=20260622-font-final') format('truetype');font-weight:100 900;font-style:normal;font-display:block;}
+:root{--albam09-font-main:'Albam09Cute','Ownglyph PDH','온글잎 박다현체',sans-serif!important;--albam-font-sans:var(--albam09-font-main)!important;--albam-font-display:var(--albam09-font-main)!important;}
+html,body{font-family:var(--albam09-font-main)!important;font-size:20px!important;}
+html body,html body *,html body *::before,html body *::after{font-family:var(--albam09-font-main)!important;}
+p,li,a,button,input,textarea,select,label,.hero-desc,.hero-keyline,.detail-copy,.detail-notice,.business-description-item,.seo-article-card p{font-size:1.12rem!important;line-height:1.62!important;}
+h1,.daum-wm-title,.detail-hero h1,main section[title] h1,section[title] h1,.place-hero h1{font-size:clamp(2.10rem,4.65vw,3.45rem)!important;line-height:1.13!important;font-weight:400!important;}
+h2,.detail-section h2,section[list] h2,.business-description-section h2{font-size:clamp(1.55rem,2.85vw,2.10rem)!important;font-weight:400!important;}
+h3,section[list] h3,.seo-article-card h3{font-size:clamp(1.22rem,2.25vw,1.58rem)!important;font-weight:400!important;}
+</style>
