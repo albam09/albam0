@@ -151,7 +151,7 @@
     try { path = String(location.pathname || ''); } catch (e) {}
     path = path.replace(/\\/g, '/');
 
-    // /page/karaoke1, /page/karaoke1/, /page/karaoke1.html 모두 같은 페이지로 인식
+    // /page/karaoke1.html, /page/karaoke1.html, /page/karaoke1.html 모두 같은 페이지로 인식
     var parts = path.split('/').filter(function (part) { return part && part.trim(); });
     var file = parts.length ? parts[parts.length - 1] : 'index';
     file = file.replace(/\.html?$/i, '');

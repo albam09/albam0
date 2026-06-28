@@ -4,24 +4,10 @@
    - 전체 글씨 약 4pt급 확대
    - 마지막 cascade용 강제 스타일
 */
-@font-face{
-  font-family:'Albam09Cute';
-  src:url('/fonts/Albam09Cute.ttf?v=20260622-font-final') format('truetype');
-  font-weight:100 900;
-  font-style:normal;
-  font-display:block;
-}
-@font-face{
-  font-family:'Ownglyph PDH';
-  src:url('/fonts/Albam09Cute.ttf?v=20260622-font-final') format('truetype');
-  font-weight:100 900;
-  font-style:normal;
-  font-display:block;
-}
 :root{
-  --albam09-font-main:'Albam09Cute','Ownglyph PDH','온글잎 박다현체',sans-serif!important;
-  --albam-font-sans:'Albam09Cute','Ownglyph PDH','온글잎 박다현체',sans-serif!important;
-  --albam-font-display:'Albam09Cute','Ownglyph PDH','온글잎 박다현체',sans-serif!important;
+  --albam09-font-main:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;
+  --albam-font-sans:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;
+  --albam-font-display:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;
 }
 html,body{font-family:var(--albam09-font-main)!important;font-size:20px!important;-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important;}
 html body,html body *,html body *::before,html body *::after{font-family:var(--albam09-font-main)!important;}

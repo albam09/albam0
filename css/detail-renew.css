@@ -23,7 +23,7 @@ body.detail-renew{
     radial-gradient(circle at top left, rgba(255,0,0,.16), transparent 34rem),
     radial-gradient(circle at 85% 10%, rgba(69,108,255,.15), transparent 34rem),
     linear-gradient(180deg,var(--bg),var(--bg2));
-  font-family:'Albam09Cute'!important;
+  font-family:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;
   word-break:keep-all;
   width:100%;
   max-width:100%;

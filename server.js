@@ -41,6 +41,16 @@ function loadRedirects() {
 }
 const redirects = loadRedirects();
 
+function permanentRedirect(res, location) {
+  res.writeHead(301, { Location: location });
+  res.end();
+}
+function gone(res) {
+  res.writeHead(410, { 'Content-Type': 'text/plain; charset=utf-8', 'X-Robots-Tag': 'noindex, nofollow' });
+  res.end('Gone');
+}
+
+
 function findFile(requestPath) {
   let rel = cleanPath(requestPath);
   if (!rel) return null;
@@ -48,10 +58,10 @@ function findFile(requestPath) {
   const candidates = [];
   candidates.push(rel);
 
-  // /page/karaoke1 -> /page/karaoke1.html
+  // /page/karaoke1.html -> /page/karaoke1.html
   if (!path.extname(rel)) candidates.push(rel + '.html');
 
-  // /page/karaoke1/ -> /page/karaoke1/index.html
+  // /page/karaoke1.html -> /page/karaoke1/index.html
   if (rel.endsWith(path.sep) || rel.endsWith('/')) candidates.push(path.join(rel, 'index.html'));
   if (!path.extname(rel)) candidates.push(path.join(rel, 'index.html'));
 
@@ -67,6 +77,23 @@ const server = http.createServer((req, res) => {
   const requestUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
   const originalPath = requestUrl.pathname;
   const decodedPath = safeDecode(originalPath);
+
+  // Removed report page: tell crawlers it is intentionally gone.
+  if (/^\/page\/gwangju-yuheng-sites\/?(?:\.html)?$/i.test(decodedPath)) {
+    gone(res);
+    return;
+  }
+
+  // Canonical page URLs: use .html only. Old slash/no-extension URLs redirect to the final URL.
+  const pageMatch = decodedPath.match(/^\/page\/(karaoke[1-8]|etc)\/?$/i);
+  if (pageMatch) {
+    permanentRedirect(res, `/page/${pageMatch[1]}.html`);
+    return;
+  }
+  if (/^\/page\/karaoke\/?$/i.test(decodedPath)) {
+    permanentRedirect(res, '/page/karaoke1.html');
+    return;
+  }
 
   const redirectTarget = redirects.get(originalPath) || redirects.get(decodedPath);
   if (redirectTarget) {

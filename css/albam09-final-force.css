@@ -4,24 +4,10 @@
    - 전체 글씨 약 4pt급 확대
    - 마지막 cascade용 강제 스타일
 */
-@font-face{
-  font-family:'Albam09Cute';
-  src:url('/fonts/Albam09Cute.ttf?v=20260622-font-final') format('truetype');
-  font-weight:100 900;
-  font-style:normal;
-  font-display:block;
-}
-@font-face{
-  font-family:'Ownglyph PDH';
-  src:url('/fonts/Albam09Cute.ttf?v=20260622-font-final') format('truetype');
-  font-weight:100 900;
-  font-style:normal;
-  font-display:block;
-}
 :root{
-  --albam09-font-main:'Albam09Cute','Ownglyph PDH','온글잎 박다현체',sans-serif!important;
-  --albam-font-sans:'Albam09Cute','Ownglyph PDH','온글잎 박다현체',sans-serif!important;
-  --albam-font-display:'Albam09Cute','Ownglyph PDH','온글잎 박다현체',sans-serif!important;
+  --albam09-font-main:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;
+  --albam-font-sans:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;
+  --albam-font-display:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;
 }
 html,body{font-family:var(--albam09-font-main)!important;font-size:20px!important;-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important;}
 html body,html body *,html body *::before,html body *::after{font-family:var(--albam09-font-main)!important;}
@@ -202,15 +188,8 @@ body[data-current-page="index"] main section[list] > div[wrapper] > ul li[empty]
 
 /* === ALBAM09 FINAL PATCH 20260622 INDEX BOX FONT SAFE === */
 
-@font-face{
-  font-family:'Albam09Cute';
-  src:url('/fonts/Albam09Cute.ttf?v=20260622-font-final-3') format('truetype');
-  font-weight:100 900;
-  font-style:normal;
-  font-display:block;
-}
 :root{
-  --albam09-font-main:'Albam09Cute','Ownglyph PDH','온글잎 박다현체',sans-serif!important;
+  --albam09-font-main:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;
   --albam-font-sans:var(--albam09-font-main)!important;
   --albam-font-display:var(--albam09-font-main)!important;
 }
@@ -511,13 +490,6 @@ body .area-list li a{
    - 전체 글씨 크기: 현재보다 약 1pt 줄임
    - 로컬 온글잎 박다현체만 사용
    ========================================================= */
-@font-face{
-  font-family:'Albam09Cute';
-  src:url('/fonts/Albam09Cute.ttf?v=20260622d-realfont') format('truetype');
-  font-weight:100 900;
-  font-style:normal;
-  font-display:block;
-}
 :root{
   --albam09-font-main:'Albam09Cute','온글잎 박다현체',sans-serif!important;
   --albam-font-sans:var(--albam09-font-main)!important;

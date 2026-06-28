@@ -32,7 +32,7 @@
       gtag('config', 'G-KG9Z9ZBBGD');
     </script>
 <script>
-/* 현재 지역 탭 표시 보정: 폴더형 URL(/page/karaoke1)에서도 마지막 실제 경로를 정확히 읽음 */
+/* 현재 지역 탭 표시 보정: 폴더형 URL(/page/karaoke1.html)에서도 마지막 실제 경로를 정확히 읽음 */
 document.addEventListener('DOMContentLoaded', function () {
   var path = window.location.pathname || '/';
   var parts = path.split('/').filter(Boolean);
@@ -118,8 +118,7 @@ section[title] h1{
   main section[title] h1,section[title] h1{font-size:clamp(2.02rem,9.2vw,2.72rem)!important;line-height:1.12!important;}
 }
 </style>
-<link href="css/albam09-local-font.css?v=20260622-final" rel="stylesheet"/><link as="font" crossorigin="" href="fonts/Albam09Cute.ttf?v=20260622-font-final" rel="preload" type="font/ttf"/>
-<link href="css/albam09-final-force.css?v=20260622g-nav-nearest" rel="stylesheet"/><link href="css/index-mobile-pc-final-20260622.css?v=20260622g-index-same-nav-nearest" rel="stylesheet"/>
+<link href="css/albam09-local-font.css?v=20260622-final" rel="stylesheet"/><link href="css/albam09-final-force.css?v=20260622g-nav-nearest" rel="stylesheet"/><link href="css/index-mobile-pc-final-20260622.css?v=20260622g-index-same-nav-nearest" rel="stylesheet"/>
 <link href="css/footer-contact-20260626.css?v=20260626a" rel="stylesheet"/>
 
 <style id="cloudtype-local-safe-fallback">
@@ -539,7 +538,7 @@ section[title] h1,
 </style>
 <style id="albam09-final-font-size-last">
 @font-face{font-family:'Albam09Cute';src:url('fonts/Albam09Cute.ttf?v=20260622-font-final') format('truetype');font-weight:100 900;font-style:normal;font-display:block;}
-:root{--albam09-font-main:'Albam09Cute','Ownglyph PDH','온글잎 박다현체',sans-serif!important;--albam-font-sans:var(--albam09-font-main)!important;--albam-font-display:var(--albam09-font-main)!important;}
+:root{--albam09-font-main:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;--albam-font-sans:var(--albam09-font-main)!important;--albam-font-display:var(--albam09-font-main)!important;}
 html,body{font-family:var(--albam09-font-main)!important;font-size:20px!important;}
 html body,html body *,html body *::before,html body *::after{font-family:var(--albam09-font-main)!important;}
 p,li,a,button,input,textarea,select,label,.hero-desc,.hero-keyline,.detail-copy,.detail-notice,.business-description-item,.seo-article-card p{font-size:1.12rem!important;line-height:1.62!important;}

@@ -6,12 +6,12 @@
 /* 🚩 정확히 rotating-list-container의 h3만 적용 */
 [itemprop="itemListElement"] h3,
 [itemprop="itemListElement"] h3 a {
-    font-family:'Albam09Cute'!important;
+    font-family:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;
     font-weight: 800 !important;
 }
 .rotating-list-container h3,
 .rotating-list-container h3 a {
-    font-family:'Albam09Cute'!important;
+    font-family:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;
     font-weight: 800 !important;
 }
 
@@ -72,7 +72,7 @@ iframe[src*="google.com/maps"] {
 
 /* extracted from index.html id="albam-mobile-box-board-20260523" */
 /* 2026-05-23 모바일 박스 정리: 프리미엄 화이트 + 은은한 벚꽃 포인트, 스마트폰 2열/요약형 */
-.seo-article-board{margin:44px auto 54px!important;padding:0 16px!important;max-width:1160px!important;box-sizing:border-box!important;font-family:'Albam09Cute'!important;}
+.seo-article-board{margin:44px auto 54px!important;padding:0 16px!important;max-width:1160px!important;box-sizing:border-box!important;font-family:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;}
 .seo-article-inner{position:relative!important;background:linear-gradient(180deg,#fffefd 0%,#fff 62%,#fffaf8 100%)!important;border:1px solid rgba(226,202,207,.72)!important;border-radius:24px!important;padding:26px!important;box-shadow:0 16px 38px rgba(70,44,52,.07)!important;color:#2f2528!important;overflow:hidden!important;}
 .seo-article-inner::before{content:''!important;position:absolute!important;right:-110px!important;top:-120px!important;width:280px!important;height:280px!important;border-radius:999px!important;background:radial-gradient(circle,rgba(232,170,184,.20) 0%,rgba(255,250,246,0) 68%)!important;pointer-events:none!important;}
 .seo-article-inner::after{content:''!important;position:absolute!important;left:24px!important;top:0!important;width:74px!important;height:3px!important;border-radius:999px!important;background:linear-gradient(90deg,#d99caf,#f1d8df,#ffffff)!important;opacity:.9!important;}
@@ -99,7 +99,7 @@ iframe[src*="google.com/maps"] {
 .seo-article-pagination{position:relative!important;z-index:2!important;display:flex!important;justify-content:center!important;gap:9px!important;margin:18px auto 0!important;flex-wrap:wrap!important;background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important;}
 .seo-article-pagination button{appearance:none!important;border:1px solid rgba(226,202,207,.9)!important;background:#fff!important;color:#935e6d!important;border-radius:999px!important;padding:10px 20px!important;font-size:14px!important;font-weight:950!important;cursor:pointer!important;min-width:96px!important;box-shadow:0 7px 18px rgba(70,44,52,.045)!important;}
 .seo-article-pagination button.is-active{background:linear-gradient(180deg,#fff8fa,#f3dce4)!important;color:#7f4d5a!important;border-color:rgba(213,147,164,.85)!important;box-shadow:0 9px 22px rgba(217,156,175,.15)!important;}
-.insta-guide{position:relative!important;margin:42px auto 48px!important;padding:24px!important;max-width:1160px!important;box-sizing:border-box!important;border-radius:24px!important;background:linear-gradient(180deg,#fffefd 0%,#fff 65%,#fffaf8 100%)!important;border:1px solid rgba(226,202,207,.72)!important;box-shadow:0 16px 38px rgba(70,44,52,.065)!important;overflow:hidden!important;font-family:'Albam09Cute'!important;}
+.insta-guide{position:relative!important;margin:42px auto 48px!important;padding:24px!important;max-width:1160px!important;box-sizing:border-box!important;border-radius:24px!important;background:linear-gradient(180deg,#fffefd 0%,#fff 65%,#fffaf8 100%)!important;border:1px solid rgba(226,202,207,.72)!important;box-shadow:0 16px 38px rgba(70,44,52,.065)!important;overflow:hidden!important;font-family:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;}
 .insta-guide::before{content:''!important;position:absolute!important;right:-82px!important;top:-96px!important;width:240px!important;height:240px!important;border-radius:999px!important;background:radial-gradient(circle,rgba(232,170,184,.18),rgba(255,250,246,0) 70%)!important;z-index:0!important;}
 .insta-guide::after{content:''!important;position:absolute!important;left:24px!important;top:0!important;width:74px!important;height:3px!important;border-radius:999px!important;background:linear-gradient(90deg,#d99caf,#f1d8df,#ffffff)!important;pointer-events:none!important;}
 .insta-guide .insta-header{position:relative!important;z-index:1!important;text-align:left!important;margin:0 0 16px!important;padding-bottom:15px!important;border-bottom:1px solid rgba(232,216,219,.85)!important;}
@@ -164,7 +164,7 @@ iframe[src*="google.com/maps"] {
 
 /* extracted from index.html id="brand-tone-board-style" */
 /* 2026-05-23 brand-tone override: 사이트 전체 보라/화이트 분위기 맞춤, 벚꽃 핑크 제거 */
-.seo-article-board{margin:42px auto 50px!important;padding:0 14px!important;max-width:1160px!important;box-sizing:border-box!important;font-family:'Albam09Cute'!important;}
+.seo-article-board{margin:42px auto 50px!important;padding:0 14px!important;max-width:1160px!important;box-sizing:border-box!important;font-family:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;}
 .seo-article-inner{position:relative!important;background:linear-gradient(180deg,#ffffff 0%,#ffffff 58%,#fbf8ff 100%)!important;border:1px solid rgba(95,0,159,.18)!important;border-radius:24px!important;padding:26px!important;box-shadow:0 16px 38px rgba(38,16,74,.075)!important;color:#2f2a3c!important;overflow:hidden!important;}
 .seo-article-inner::before{content:''!important;position:absolute!important;right:-105px!important;top:-115px!important;width:270px!important;height:270px!important;border-radius:999px!important;background:radial-gradient(circle,rgba(95,0,159,.13) 0%,rgba(147,73,255,.08) 42%,rgba(255,255,255,0) 70%)!important;pointer-events:none!important;filter:none!important;}
 .seo-article-inner::after{content:''!important;position:absolute!important;left:24px!important;top:0!important;width:86px!important;height:3px!important;border-radius:999px!important;background:linear-gradient(90deg,#5F009F,#9349ff,#ff3a4e)!important;opacity:.92!important;}
@@ -191,7 +191,7 @@ iframe[src*="google.com/maps"] {
 .seo-article-pagination{position:relative!important;z-index:2!important;display:flex!important;justify-content:center!important;gap:9px!important;margin:18px auto 0!important;flex-wrap:wrap!important;background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important;}
 .seo-article-pagination button{appearance:none!important;border:1px solid rgba(95,0,159,.22)!important;background:#fff!important;color:#5F009F!important;border-radius:999px!important;padding:10px 20px!important;font-size:14px!important;font-weight:950!important;cursor:pointer!important;min-width:96px!important;box-shadow:0 7px 18px rgba(38,16,74,.045)!important;}
 .seo-article-pagination button.is-active{background:linear-gradient(180deg,#9349ff,#5F009F)!important;color:#fff!important;border-color:#5F009F!important;box-shadow:0 9px 22px rgba(95,0,159,.16)!important;}
-.insta-guide{position:relative!important;margin:42px auto 48px!important;padding:24px!important;max-width:1160px!important;box-sizing:border-box!important;border-radius:24px!important;background:linear-gradient(180deg,#ffffff 0%,#ffffff 65%,#fbf8ff 100%)!important;border:1px solid rgba(95,0,159,.18)!important;box-shadow:0 16px 38px rgba(38,16,74,.07)!important;overflow:hidden!important;font-family:'Albam09Cute'!important;}
+.insta-guide{position:relative!important;margin:42px auto 48px!important;padding:24px!important;max-width:1160px!important;box-sizing:border-box!important;border-radius:24px!important;background:linear-gradient(180deg,#ffffff 0%,#ffffff 65%,#fbf8ff 100%)!important;border:1px solid rgba(95,0,159,.18)!important;box-shadow:0 16px 38px rgba(38,16,74,.07)!important;overflow:hidden!important;font-family:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;}
 .insta-guide::before{content:''!important;position:absolute!important;right:-82px!important;top:-96px!important;width:240px!important;height:240px!important;border-radius:999px!important;background:radial-gradient(circle,rgba(95,0,159,.12),rgba(147,73,255,.06),rgba(255,255,255,0) 70%)!important;z-index:0!important;}
 .insta-guide::after{content:''!important;position:absolute!important;left:24px!important;top:0!important;width:86px!important;height:3px!important;border-radius:999px!important;background:linear-gradient(90deg,#5F009F,#9349ff,#ff3a4e)!important;pointer-events:none!important;}
 .insta-guide .insta-header{position:relative!important;z-index:1!important;text-align:left!important;margin:0 0 16px!important;padding-bottom:15px!important;border-bottom:1px solid rgba(95,0,159,.12)!important;}
@@ -326,7 +326,7 @@ main section[title] > p:not(.hero-keyline), section[title] > p:not(.hero-keyline
 
 
 /* extracted from index.html id="albam-site-analysis-20260530" */
-.site-analysis-wrap{max-width:1160px;margin:42px auto 64px;padding:0 16px;font-family:'Albam09Cute'!important;color:#251b2f;box-sizing:border-box;}
+.site-analysis-wrap{max-width:1160px;margin:42px auto 64px;padding:0 16px;font-family:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;color:#251b2f;box-sizing:border-box;}
 .analysis-intro{background:linear-gradient(180deg,#fff 0%,#fbf8ff 100%);border:1px solid rgba(95,0,159,.13);border-radius:26px;padding:26px;box-shadow:0 14px 36px rgba(42,18,74,.07);margin-bottom:20px;}
 .analysis-kicker{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(95,0,159,.18);background:#fff;border-radius:999px;padding:7px 12px;color:#5f009f;font-size:12px;font-weight:900;margin-bottom:12px;}
 .analysis-intro h2{margin:0 0 10px;font-size:clamp(1.36rem,3vw,2rem);letter-spacing:-.045em;line-height:1.32;color:#24142f;font-weight:950;}
@@ -364,7 +364,7 @@ main section[title] > p:not(.hero-keyline), section[title] > p:not(.hero-keyline
 
 /* extracted from index.html id="analysis-cta-and-watch-report-20260530" */
 /* 2026-05-30: 분석 리포트 CTA는 지도 위로 이동, 추천/알선 느낌 없이 소비자 주의 리포트처럼 표현 */
-.analysis-cta-panel{max-width:1160px;margin:30px auto 22px;padding:0 16px;box-sizing:border-box;font-family:'Albam09Cute'!important;}
+.analysis-cta-panel{max-width:1160px;margin:30px auto 22px;padding:0 16px;box-sizing:border-box;font-family:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;}
 .analysis-cta-panel a{position:relative;display:grid;grid-template-columns:74px 1fr auto;gap:16px;align-items:center;text-decoration:none;color:#24142f;background:linear-gradient(135deg,#ffffff 0%,#f7f2ff 55%,#fff8fa 100%);border:1px solid rgba(95,0,159,.16);border-radius:26px;padding:20px 22px;box-shadow:0 14px 34px rgba(42,18,74,.08);overflow:hidden;}
 .analysis-cta-panel a:before{content:'';position:absolute;right:-80px;top:-120px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(95,0,159,.14),rgba(222,31,104,.08) 48%,transparent 70%);pointer-events:none;}
 .analysis-cta-icon{width:64px;height:64px;border-radius:22px;background:linear-gradient(145deg,#5F009F,#2d0a46);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 24px rgba(95,0,159,.18);}
@@ -376,7 +376,7 @@ main section[title] > p:not(.hero-keyline), section[title] > p:not(.hero-keyline
 @media(max-width:760px){.analysis-cta-panel{margin:22px auto 18px;padding:0 10px}.analysis-cta-panel a{grid-template-columns:50px 1fr;gap:12px;padding:16px;border-radius:20px}.analysis-cta-icon{width:50px;height:50px;border-radius:18px}.analysis-cta-icon svg{width:28px;height:28px}.analysis-cta-copy strong{font-size:1.05rem}.analysis-cta-copy span{font-size:12.7px;line-height:1.58}.analysis-cta-badge{grid-column:1/-1;justify-self:stretch;justify-content:center;padding:10px 12px;font-size:12.5px}}
 
 /* 분석 리포트 페이지: 도메인 알선이 아니라 공개 구조 감시/주의 콘텐츠로 보이게 정리 */
-.watch-report-wrap{max-width:1160px;margin:42px auto 66px;padding:0 16px;box-sizing:border-box;font-family:'Albam09Cute'!important;color:#251b2f;}
+.watch-report-wrap{max-width:1160px;margin:42px auto 66px;padding:0 16px;box-sizing:border-box;font-family:'Albam09Cute','Noto Sans KR','Malgun Gothic',sans-serif!important;color:#251b2f;}
 .watch-alert{background:linear-gradient(135deg,#24142f,#5f009f);border-radius:28px;padding:24px 26px;color:#fff;box-shadow:0 16px 40px rgba(42,18,74,.18);margin-bottom:18px;}
 .watch-alert .kicker{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:900;margin-bottom:12px;}
 .watch-alert h2{margin:0 0 10px;font-size:clamp(1.38rem,3vw,2.08rem);line-height:1.3;letter-spacing:-.055em;font-weight:950;color:#fff;}

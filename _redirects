@@ -1,34 +1,28 @@
-# Netlify redirects for albam09.com - PRETTY URLS ON + HTML ONLY 301 FIX 20260613
-# Pretty URLs is ENABLED in Netlify UI.
-# Do NOT add clean URL -> .html rewrites.
-# Do NOT add trailing slash redirects such as /page/karaoke1/ -> /page/karaoke1.
-# Only direct .html requests are redirected to the canonical clean URLs.
-
-# Accidental .html aliases for crawler control files -> canonical files
-/sitemap.xml.html /sitemap.xml 301!
-/image-sitemap.xml.html /image-sitemap.xml 301!
-/robots.txt.html /robots.txt 301!
-
-/index.htm / 301!
-/index.html / 301!
-
-/page/karaoke1.html /page/karaoke1 301!
-/page/karaoke2.html /page/karaoke2 301!
-/page/karaoke3.html /page/karaoke3 301!
-/page/karaoke4.html /page/karaoke4 301!
-/page/karaoke5.html /page/karaoke5 301!
-/page/karaoke6.html /page/karaoke6 301!
-/page/karaoke7.html /page/karaoke7 301!
-/page/karaoke8.html /page/karaoke8 301!
-/page/etc.html /page/etc 301!
-
-# Old first category alias -> canonical page
-/page/karaoke.html /page/karaoke1 301!
-/page/karaoke /page/karaoke1 301!
-
-# /place detail pages are now merged back into albam09
-
-# Korean place URL compatibility redirects
+/sitemap.xml.html /sitemap.xml 301
+/image-sitemap.xml.html /image-sitemap.xml 301
+/robots.txt.html /robots.txt 301
+/index.htm / 301
+/index.html / 301
+/page/karaoke1 /page/karaoke1.html 301
+/page/karaoke1/ /page/karaoke1.html 301
+/page/karaoke2 /page/karaoke2.html 301
+/page/karaoke2/ /page/karaoke2.html 301
+/page/karaoke3 /page/karaoke3.html 301
+/page/karaoke3/ /page/karaoke3.html 301
+/page/karaoke4 /page/karaoke4.html 301
+/page/karaoke4/ /page/karaoke4.html 301
+/page/karaoke5 /page/karaoke5.html 301
+/page/karaoke5/ /page/karaoke5.html 301
+/page/karaoke6 /page/karaoke6.html 301
+/page/karaoke6/ /page/karaoke6.html 301
+/page/karaoke7 /page/karaoke7.html 301
+/page/karaoke7/ /page/karaoke7.html 301
+/page/karaoke8 /page/karaoke8.html 301
+/page/karaoke8/ /page/karaoke8.html 301
+/page/etc /page/etc.html 301
+/page/etc/ /page/etc.html 301
+/page/karaoke /page/karaoke1.html 301
+/page/karaoke/ /page/karaoke1.html 301
 /place/top탑.html /place/top.html 301
 /place/top%ED%83%91.html /place/top.html 301
 /place/top탑 /place/top.html 301
