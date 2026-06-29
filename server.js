@@ -3,54 +3,81 @@ const fs = require('fs');
 const path = require('path');
 const ROOT = __dirname;
 const PORT = process.env.PORT || 8080;
+const HOST = process.env.HOST || '0.0.0.0';
 
 const mime = {
-  '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'application/javascript; charset=utf-8',
-  '.json': 'application/json; charset=utf-8', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8',
-  '.ico': 'image/x-icon', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp',
-  '.svg': 'image/svg+xml', '.gif': 'image/gif', '.ttf': 'font/ttf', '.woff': 'font/woff', '.woff2': 'font/woff2'
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.js': 'application/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.xml': 'application/xml; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8',
+  '.ico': 'image/x-icon',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp',
+  '.svg': 'image/svg+xml',
+  '.gif': 'image/gif',
+  '.ttf': 'font/ttf',
+  '.woff': 'font/woff',
+  '.woff2': 'font/woff2'
 };
 
-function safeDecode(u) { try { return decodeURIComponent(u); } catch { return u; } }
-function stripEndSlash(p) { return p.length > 1 ? p.replace(/\/+$/, '') : p; }
-function noExtPath(p) { return p.replace(/\.html$/i, ''); }
-function permanentRedirect(res, location) { res.writeHead(301, { Location: location }); res.end(); }
-function gone(res) { res.writeHead(410, { 'Content-Type': 'text/plain; charset=utf-8', 'X-Robots-Tag': 'noindex, nofollow' }); res.end('Gone'); }
+function safeDecode(value) {
+  try { return decodeURIComponent(value); } catch { return value; }
+}
+
+function send404(res) {
+  res.writeHead(404, {
+    'Content-Type': 'text/html; charset=utf-8',
+    'X-Robots-Tag': 'noindex, follow',
+    'X-URL-Policy': 'extensionless-only'
+  });
+  res.end('<!doctype html><meta charset="utf-8"><title>404</title><h1>페이지를 찾을 수 없습니다</h1>');
+}
+
+function send410(res) {
+  res.writeHead(410, {
+    'Content-Type': 'text/plain; charset=utf-8',
+    'X-Robots-Tag': 'noindex, nofollow',
+    'X-URL-Policy': 'gone'
+  });
+  res.end('Gone');
+}
+
+function redirect301(res, location) {
+  res.writeHead(301, {
+    Location: location,
+    'X-URL-Policy': 'root-index-only'
+  });
+  res.end();
+}
 
 function cleanPath(urlPath) {
-  const noQuery = urlPath.split('?')[0].split('#')[0];
-  const decoded = safeDecode(noQuery);
+  const decoded = safeDecode(urlPath.split('?')[0].split('#')[0]);
   const normalized = path.normalize(decoded).replace(/^([/\\])+/, '');
   if (normalized.includes('..')) return null;
   return normalized || 'index.html';
 }
 
-function loadRedirects() {
-  const file = path.join(ROOT, '_redirects');
-  const map = new Map();
-  if (!fs.existsSync(file)) return map;
-  for (const raw of fs.readFileSync(file, 'utf8').split(/\r?\n/)) {
-    const line = raw.trim();
-    if (!line || line.startsWith('#')) continue;
-    const parts = line.split(/\s+/);
-    if (parts.length >= 2) {
-      map.set(parts[0], parts[1]);
-      map.set(safeDecode(parts[0]), parts[1]);
-    }
-  }
-  return map;
-}
-const redirects = loadRedirects();
-
-function findFile(requestPath) {
-  let rel = cleanPath(requestPath);
+function findFile(urlPath) {
+  const rel = cleanPath(urlPath);
   if (!rel) return null;
-  const candidates = [rel];
-  if (!path.extname(rel)) candidates.push(rel + '.html');
-  if (rel.endsWith(path.sep) || rel.endsWith('/')) candidates.push(path.join(rel, 'index.html'));
-  if (!path.extname(rel)) candidates.push(path.join(rel, 'index.html'));
-  for (const c of candidates) {
-    const full = path.join(ROOT, c);
+
+  const candidates = [];
+  const ext = path.extname(rel).toLowerCase();
+
+  if (!ext) {
+    // Public URLs are extensionless, but physical documents are .html files.
+    candidates.push(rel + '.html');
+    candidates.push(path.join(rel, 'index.html'));
+  } else {
+    candidates.push(rel);
+  }
+
+  for (const candidate of candidates) {
+    const full = path.join(ROOT, candidate);
     if (!full.startsWith(ROOT)) continue;
     if (fs.existsSync(full) && fs.statSync(full).isFile()) return full;
   }
@@ -63,43 +90,35 @@ const server = http.createServer((req, res) => {
   const decodedPath = safeDecode(originalPath);
   const query = requestUrl.search || '';
 
-  // Deleted report page: tell crawlers it is intentionally gone.
-  if (/^\/page\/gwangju-yuheng-sites\/?(?:\.html)?$/i.test(decodedPath)) return gone(res);
+  // Removed report page must stay removed.
+  if (/^\/page\/gwangju-yuheng-sites(?:\.html|\/)?$/i.test(decodedPath)) return send410(res);
 
-  // Main page canonical URL is only '/'.
-  if (/^\/(?:index|\.index)\.html?$/i.test(decodedPath)) return permanentRedirect(res, '/' + query);
+  // Main page public URL is only '/'.
+  if (/^\/(?:index|\.index)\.html$/i.test(decodedPath)) return redirect301(res, '/' + query);
 
-  // Public canonical URLs must be extensionless: /page/karaoke1, /place/room-flower-deer.
-  // The .html part is only the physical file name on the server and must not be a public URL.
-  // Keep Google/Naver verification files accessible; /index.html is handled above and redirects to '/'.
-  if (/\.html$/i.test(decodedPath) && !/^\/(google|naver)/i.test(decodedPath)) {
-    res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8', 'X-Robots-Tag': 'noindex, follow' });
-    res.end('<!doctype html><meta charset="utf-8"><title>404</title><h1>페이지를 찾을 수 없습니다</h1>');
-    return;
-  }
+  // Verification files are real .html files and must remain accessible.
+  const isVerificationFile = /^\/(?:google[^/]+|naver[^/]+)\.html$/i.test(decodedPath);
 
-  // Strict canonical rule: trailing slash URLs are not valid pages.
-  // Example: /page/karaoke2 is OK, but /page/karaoke2/ returns 404.
-  if (decodedPath.length > 1 && /\/$/.test(decodedPath)) {
-    res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8', 'X-Robots-Tag': 'noindex, follow' });
-    res.end('<!doctype html><meta charset="utf-8"><title>404</title><h1>페이지를 찾을 수 없습니다</h1>');
-    return;
-  }
+  // Public page/place URLs must be extensionless only.
+  // /page/karaoke2 is OK. /page/karaoke2.html and /page/karaoke2/ are blocked.
+  if (!isVerificationFile && /^\/(?:page|place)\/.+\.html$/i.test(decodedPath)) return send404(res);
+  if (/^\/(?:page|place)\/.+\/$/i.test(decodedPath)) return send404(res);
+
+  // No trailing slash URLs except root.
+  if (decodedPath.length > 1 && /\/$/.test(decodedPath)) return send404(res);
 
   // Old group alias.
-  if (/^\/page\/karaoke$/i.test(decodedPath)) return permanentRedirect(res, '/page/karaoke1' + query);
-
-  const redirectTarget = redirects.get(originalPath) || redirects.get(decodedPath);
-  if (redirectTarget) return permanentRedirect(res, redirectTarget + query);
+  if (/^\/page\/karaoke$/i.test(decodedPath)) return redirect301(res, '/page/karaoke1' + query);
 
   const file = findFile(originalPath);
-  if (!file) {
-    res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
-    res.end('<!doctype html><meta charset="utf-8"><title>404</title><h1>페이지를 찾을 수 없습니다</h1>');
-    return;
-  }
+  if (!file) return send404(res);
+
   const ext = path.extname(file).toLowerCase();
-  const headers = { 'Content-Type': mime[ext] || 'application/octet-stream', 'X-Robots-Tag': 'index, follow' };
+  const headers = {
+    'Content-Type': mime[ext] || 'application/octet-stream',
+    'X-Robots-Tag': 'index, follow',
+    'X-URL-Policy': 'extensionless-only'
+  };
   if (['.png', '.jpg', '.jpeg', '.webp', '.svg', '.gif', '.ico', '.css', '.js', '.ttf', '.woff', '.woff2'].includes(ext)) {
     headers['Cache-Control'] = 'public, max-age=604800';
   }
@@ -107,5 +126,4 @@ const server = http.createServer((req, res) => {
   fs.createReadStream(file).pipe(res);
 });
 
-const HOST = process.env.HOST || '0.0.0.0';
-server.listen(PORT, HOST, () => console.log(`albam09 server running on http://${HOST}:${PORT}`));
+server.listen(PORT, HOST, () => console.log(`albam09 strict URL server running on http://${HOST}:${PORT}`));
