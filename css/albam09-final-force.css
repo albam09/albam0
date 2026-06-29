@@ -1,13 +1,13 @@
 /* ALBAM09 FINAL FORCE 20260622
-   - 로컬 폰트만 사용: Google Jua webfont
+   - 로컬 폰트만 사용: /fonts/Albam09Cute.ttf
    - 외부 Google/CDN 폰트 사용 금지
    - 전체 글씨 약 4pt급 확대
    - 마지막 cascade용 강제 스타일
 */
 :root{
-  --albam09-font-main:'Jua','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif!important;
-  --albam-font-sans:'Jua','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif!important;
-  --albam-font-display:'Jua','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif!important;
+  --albam09-font-main:'Albam09Cute',sans-serif!important;
+  --albam-font-sans:'Albam09Cute',sans-serif!important;
+  --albam-font-display:'Albam09Cute',sans-serif!important;
 }
 html,body{font-family:var(--albam09-font-main)!important;font-size:20px!important;-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important;}
 html body,html body *,html body *::before,html body *::after{font-family:var(--albam09-font-main)!important;}
@@ -189,7 +189,7 @@ body[data-current-page="index"] main section[list] > div[wrapper] > ul li[empty]
 /* === ALBAM09 FINAL PATCH 20260622 INDEX BOX FONT SAFE === */
 
 :root{
-  --albam09-font-main:'Jua','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif!important;
+  --albam09-font-main:'Albam09Cute',sans-serif!important;
   --albam-font-sans:var(--albam09-font-main)!important;
   --albam-font-display:var(--albam09-font-main)!important;
 }
@@ -488,10 +488,10 @@ body .area-list li a{
    ALBAM09 FINAL FIX 20260622D
    - header/logo/nav: index와 전 페이지 같은 좌표 기준으로 통일
    - 전체 글씨 크기: 현재보다 약 1pt 줄임
-   - 로컬 Noto Sans KR만 사용
+   - 원래 Albam09Cute 폰트만 사용
    ========================================================= */
 :root{
-  --albam09-font-main:'Jua','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif!important;
+  --albam09-font-main:'Albam09Cute',sans-serif!important;
   --albam-font-sans:var(--albam09-font-main)!important;
   --albam-font-display:var(--albam09-font-main)!important;
   --albam09-shell:980px;

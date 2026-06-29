@@ -1,32 +1,26 @@
-/* ALBAM09 FINAL FORCE 20260622
-   - 로컬 폰트만 사용: Google Jua webfont
-   - 외부 Google/CDN 폰트 사용 금지
-   - 전체 글씨 약 4pt급 확대
-   - 마지막 cascade용 강제 스타일
+/* Albam09 original font unified - 20260629
+   Site-wide font: Albam09Cute only.
+   Works on PC and mobile via local /fonts/Albam09Cute.ttf
 */
-:root{
-  --albam09-font-main:'Jua','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif!important;
-  --albam-font-sans:'Jua','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif!important;
-  --albam-font-display:'Jua','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif!important;
+@font-face{
+  font-family:'Albam09Cute';
+  src:url('/fonts/Albam09Cute.ttf?v=20260629-origin-unify') format('truetype');
+  font-weight:100 900;
+  font-style:normal;
+  font-display:block;
 }
-html,body{font-family:var(--albam09-font-main)!important;font-size:20px!important;-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important;}
-html body,html body *,html body *::before,html body *::after{font-family:var(--albam09-font-main)!important;}
-body{line-height:1.58!important;}
-p,li,a,span,button,input,textarea,select,label,small,strong,b,em,div{font-family:var(--albam09-font-main)!important;}
-p,li,a,button,input,textarea,select,label,.hero-desc,.hero-keyline,.detail-copy,.detail-notice,.detail-info-card,.business-description-item,.seo-article-card p,.insta-card .text,.insta-card .sub{font-size:1.12rem!important;line-height:1.62!important;}
-.global-place-search__input,.global-place-search__button{font-size:1.12rem!important;}
-header [title],header div[title],nav a{font-size:1.08rem!important;}
-h1,.daum-wm-title,.detail-hero h1,main section[title] h1,section[title] h1,.place-hero h1{font-family:var(--albam09-font-main)!important;font-size:clamp(2.10rem,4.65vw,3.45rem)!important;line-height:1.13!important;font-weight:400!important;letter-spacing:-.025em!important;}
-h2,.detail-section h2,section[list] h2,.business-description-section h2{font-size:clamp(1.55rem,2.85vw,2.10rem)!important;line-height:1.25!important;font-weight:400!important;}
-h3,section[list] h3,.seo-article-card h3{font-size:clamp(1.22rem,2.25vw,1.58rem)!important;line-height:1.34!important;font-weight:400!important;}
-section[list] h3 a{font-size:inherit!important;line-height:inherit!important;}
-.place-list-card strong{font-size:1.28rem!important;font-weight:400!important;}
-.place-list-card span{font-size:1.08rem!important;}
-.detail-btn,.detail-menu__item b,.detail-menu__item span{font-size:1.10rem!important;}
-@media(max-width:640px){
-  html,body{font-size:19px!important;}
-  h1,.daum-wm-title,.detail-hero h1,main section[title] h1,section[title] h1,.place-hero h1{font-size:clamp(2.18rem,9.9vw,2.95rem)!important;line-height:1.12!important;}
-  h2,.detail-section h2,section[list] h2,.business-description-section h2{font-size:1.55rem!important;}
-  h3,section[list] h3,.seo-article-card h3{font-size:1.28rem!important;}
-  p,li,a,button,input,textarea,select,label,.business-description-item{font-size:1.08rem!important;}
+:root{
+  --albam09-font-main:'Albam09Cute',sans-serif!important;
+  --albam-font-sans:'Albam09Cute',sans-serif!important;
+  --albam-font-display:'Albam09Cute',sans-serif!important;
+}
+html,body,
+body *,body *::before,body *::after,
+h1,h2,h3,h4,h5,h6,p,a,span,li,div,button,input,textarea,select,label,small,strong,b,em,
+.header,.nav,.card,.btn,.place-card,.region-tab,.hero,.detail-hero,.site-footer{
+  font-family:'Albam09Cute',sans-serif!important;
+}
+html,body{
+  -webkit-text-size-adjust:100%!important;
+  text-size-adjust:100%!important;
 }
