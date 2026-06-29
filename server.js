@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+
 const ROOT = __dirname;
 const PORT = process.env.PORT || 8080;
 const HOST = process.env.HOST || '0.0.0.0';
@@ -32,7 +33,7 @@ function send404(res) {
   res.writeHead(404, {
     'Content-Type': 'text/html; charset=utf-8',
     'X-Robots-Tag': 'noindex, follow',
-    'X-URL-Policy': 'extensionless-only'
+    'X-URL-Policy': 'strict-extensionless-404'
   });
   res.end('<!doctype html><meta charset="utf-8"><title>404</title><h1>페이지를 찾을 수 없습니다</h1>');
 }
@@ -49,7 +50,7 @@ function send410(res) {
 function redirect301(res, location) {
   res.writeHead(301, {
     Location: location,
-    'X-URL-Policy': 'root-index-only'
+    'X-URL-Policy': 'index-root-only'
   });
   res.end();
 }
@@ -65,22 +66,11 @@ function findFile(urlPath) {
   const rel = cleanPath(urlPath);
   if (!rel) return null;
 
-  const candidates = [];
-  const ext = path.extname(rel).toLowerCase();
-
-  if (!ext) {
-    // Public URLs are extensionless, but physical documents are .html files.
-    candidates.push(rel + '.html');
-    candidates.push(path.join(rel, 'index.html'));
-  } else {
-    candidates.push(rel);
-  }
-
-  for (const candidate of candidates) {
-    const full = path.join(ROOT, candidate);
-    if (!full.startsWith(ROOT)) continue;
-    if (fs.existsSync(full) && fs.statSync(full).isFile()) return full;
-  }
+  // Important: do NOT add .html fallback for /page or /place.
+  // Physical files in /page and /place are extensionless now.
+  const full = path.join(ROOT, rel);
+  if (!full.startsWith(ROOT)) return null;
+  if (fs.existsSync(full) && fs.statSync(full).isFile()) return full;
   return null;
 }
 
@@ -90,34 +80,36 @@ const server = http.createServer((req, res) => {
   const decodedPath = safeDecode(originalPath);
   const query = requestUrl.search || '';
 
-  // Removed report page must stay removed.
   if (/^\/page\/gwangju-yuheng-sites(?:\.html|\/)?$/i.test(decodedPath)) return send410(res);
 
-  // Main page public URL is only '/'.
+  // Main page: only / is canonical. index.html redirects to /.
   if (/^\/(?:index|\.index)\.html$/i.test(decodedPath)) return redirect301(res, '/' + query);
 
-  // Verification files are real .html files and must remain accessible.
   const isVerificationFile = /^\/(?:google[^/]+|naver[^/]+)\.html$/i.test(decodedPath);
 
-  // Public page/place URLs must be extensionless only.
-  // /page/karaoke2 is OK. /page/karaoke2.html and /page/karaoke2/ are blocked.
+  // These must NEVER be public URLs for normal pages.
   if (!isVerificationFile && /^\/(?:page|place)\/.+\.html$/i.test(decodedPath)) return send404(res);
   if (/^\/(?:page|place)\/.+\/$/i.test(decodedPath)) return send404(res);
 
-  // No trailing slash URLs except root.
+  // No trailing slash except root.
   if (decodedPath.length > 1 && /\/$/.test(decodedPath)) return send404(res);
 
-  // Old group alias.
   if (/^\/page\/karaoke$/i.test(decodedPath)) return redirect301(res, '/page/karaoke1' + query);
 
   const file = findFile(originalPath);
   if (!file) return send404(res);
 
-  const ext = path.extname(file).toLowerCase();
+  let ext = path.extname(file).toLowerCase();
+  let contentType = mime[ext] || 'application/octet-stream';
+
+  // Extensionless /page and /place files are HTML documents.
+  const rel = path.relative(ROOT, file).replace(/\\/g, '/');
+  if (!ext && /^(page|place)\//.test(rel)) contentType = 'text/html; charset=utf-8';
+
   const headers = {
-    'Content-Type': mime[ext] || 'application/octet-stream',
+    'Content-Type': contentType,
     'X-Robots-Tag': 'index, follow',
-    'X-URL-Policy': 'extensionless-only'
+    'X-URL-Policy': 'strict-extensionless-404'
   };
   if (['.png', '.jpg', '.jpeg', '.webp', '.svg', '.gif', '.ico', '.css', '.js', '.ttf', '.woff', '.woff2'].includes(ext)) {
     headers['Cache-Control'] = 'public, max-age=604800';
@@ -126,4 +118,4 @@ const server = http.createServer((req, res) => {
   fs.createReadStream(file).pipe(res);
 });
 
-server.listen(PORT, HOST, () => console.log(`albam09 strict URL server running on http://${HOST}:${PORT}`));
+server.listen(PORT, HOST, () => console.log(`albam09 strict extensionless server running on http://${HOST}:${PORT}`));
