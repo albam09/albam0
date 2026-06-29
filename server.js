@@ -1,69 +1,144 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+
 const ROOT = __dirname;
 const PORT = process.env.PORT || 8080;
+const HOST = process.env.HOST || '0.0.0.0';
+const VERSION = 'ALBAM09-STRICT-ROUTE-20260629-SERVER-FIRST';
 
 const mime = {
-  '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'application/javascript; charset=utf-8',
-  '.json': 'application/json; charset=utf-8', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8',
-  '.ico': 'image/x-icon', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp',
-  '.svg': 'image/svg+xml', '.gif': 'image/gif', '.ttf': 'font/ttf', '.woff': 'font/woff', '.woff2': 'font/woff2'
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.js': 'application/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.xml': 'application/xml; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8',
+  '.ico': 'image/x-icon',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp',
+  '.svg': 'image/svg+xml',
+  '.gif': 'image/gif',
+  '.ttf': 'font/ttf',
+  '.woff': 'font/woff',
+  '.woff2': 'font/woff2'
 };
-function safeDecode(u){ try { return decodeURIComponent(u); } catch { return u; } }
-function send404(res){ res.writeHead(404, {'Content-Type':'text/html; charset=utf-8','X-Robots-Tag':'noindex, follow'}); res.end('<!doctype html><meta charset="utf-8"><title>404</title><h1>페이지를 찾을 수 없습니다</h1>'); }
-function send410(res){ res.writeHead(410, {'Content-Type':'text/plain; charset=utf-8','X-Robots-Tag':'noindex, nofollow'}); res.end('Gone'); }
-function redirect(res, loc){ res.writeHead(301, {Location: loc}); res.end(); }
-function cleanPath(urlPath){
-  const decoded=safeDecode(urlPath.split('?')[0].split('#')[0]);
-  const rel=path.normalize(decoded).replace(/^([/\\])+/, '');
-  if (!rel || rel === '.') return 'index.html';
+
+function safeDecode(value) {
+  try { return decodeURIComponent(value); } catch { return value; }
+}
+
+function baseHeaders(extra = {}) {
+  return Object.assign({
+    'X-Albam-Route-Version': VERSION,
+    'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+    'Pragma': 'no-cache',
+    'Expires': '0'
+  }, extra);
+}
+
+function notFound(res) {
+  res.writeHead(404, baseHeaders({
+    'Content-Type': 'text/html; charset=utf-8',
+    'X-Robots-Tag': 'noindex, follow'
+  }));
+  res.end('<!doctype html><meta charset="utf-8"><title>404</title><h1>페이지를 찾을 수 없습니다</h1>');
+}
+
+function gone(res) {
+  res.writeHead(410, baseHeaders({
+    'Content-Type': 'text/plain; charset=utf-8',
+    'X-Robots-Tag': 'noindex, nofollow'
+  }));
+  res.end('Gone');
+}
+
+function redirect(res, location) {
+  // 302로 둔다. 이전 301 캐시가 브라우저에 남아 있어도 앞으로 새 리디렉션을 강하게 캐시하지 않게 하기 위함.
+  res.writeHead(302, baseHeaders({ Location: location }));
+  res.end();
+}
+
+function normalizeToFile(urlPath) {
+  const decoded = safeDecode(urlPath.split('?')[0].split('#')[0]);
+  let rel = path.normalize(decoded).replace(/^([/\\])+/, '');
+  if (!rel || rel === '.') rel = 'index.html';
   if (rel.includes('..')) return null;
   return rel;
 }
-function fileFor(reqPath){
-  const rel=cleanPath(reqPath);
+
+function resolveFile(publicPath) {
+  const rel = normalizeToFile(publicPath);
   if (!rel) return null;
-  const full=path.join(ROOT, rel);
-  if (!full.startsWith(ROOT)) return null;
-  if (fs.existsSync(full) && fs.statSync(full).isFile()) return full;
+
+  const candidates = [];
+  if (rel === 'index.html') {
+    candidates.push('index.html');
+  } else if (rel.startsWith('page/') || rel.startsWith('place/')) {
+    // 공개 주소는 /page/karaoke4, 실제 파일은 page/karaoke4.html
+    // 단, .html 또는 끝 슬래시는 createServer 맨 위에서 이미 404 처리한다.
+    candidates.push(rel + '.html');
+  } else {
+    // CSS/JS/이미지/폰트/사이트맵/소유확인 파일 등은 실제 파일명 그대로 제공
+    candidates.push(rel);
+  }
+
+  for (const candidate of candidates) {
+    const full = path.join(ROOT, candidate);
+    if (!full.startsWith(ROOT)) continue;
+    if (fs.existsSync(full) && fs.statSync(full).isFile()) return full;
+  }
   return null;
 }
-function isHtmlLike(file){
-  const ext=path.extname(file).toLowerCase();
-  if (ext === '.html') return true;
-  const rel=path.relative(ROOT, file).replace(/\\/g,'/');
-  return /^page\/[A-Za-z0-9_-]+$/.test(rel) || /^place\/[A-Za-z0-9_-]+$/.test(rel);
-}
-const server=http.createServer((req,res)=>{
-  const u=new URL(req.url, `http://${req.headers.host || 'localhost'}`);
-  const p=safeDecode(u.pathname);
-  const q=u.search || '';
 
-  // 삭제한 리포트 페이지는 모두 삭제 상태로 고정
-  if (/^\/page\/gwangju-yuheng-sites(?:\/|\.html)?$/i.test(p)) return send410(res);
+const server = http.createServer((req, res) => {
+  const requestUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+  const originalPath = requestUrl.pathname;
+  const decodedPath = safeDecode(originalPath);
+  const query = requestUrl.search || '';
 
-  // 메인은 '/'만 정식. index 파일은 루트로 보냄.
-  if (/^\/(?:index|\.index)\.html$/i.test(p)) return redirect(res, '/' + q);
+  if (decodedPath === '/__route-check') {
+    res.writeHead(200, baseHeaders({ 'Content-Type': 'application/json; charset=utf-8' }));
+    res.end(JSON.stringify({ version: VERSION, strictHtml404: true, strictTrailingSlash404: true }));
+    return;
+  }
 
-  // page/place 공개 주소 정책: 확장자 없는 주소만 허용.
-  if (/^\/(?:page|place)\/[^/?#]+\.html$/i.test(p)) return send404(res);
+  // 1순위: 삭제한 리포트 페이지는 항상 410.
+  if (/^\/page\/gwangju-yuheng-sites(?:\.html|\/)?$/i.test(decodedPath)) return gone(res);
 
-  // /page/karaoke4/, /place/name/ 도 전부 404.
-  if (/^\/(?:page|place)\/[^/?#]+\/$/i.test(p)) return send404(res);
+  // 2순위: 메인만 / 로 고정. /index.html 은 / 로 보냄.
+  if (/^\/(?:index|\.index)\.html?$/i.test(decodedPath)) return redirect(res, '/' + query);
 
-  // 루트 외의 기타 trailing slash도 디렉터리 자동 매칭 금지.
-  if (p.length > 1 && /\/$/.test(p)) return send404(res);
+  // 3순위: /page, /place의 .html 공개 접속은 무조건 404.
+  // 구글/네이버 소유확인 파일은 page/place가 아니므로 영향 없음.
+  if (/^\/(page|place)\/.*\.html$/i.test(decodedPath)) return notFound(res);
 
-  const f=fileFor(p);
-  if (!f) return send404(res);
-  const ext=path.extname(f).toLowerCase();
-  const type=isHtmlLike(f) ? 'text/html; charset=utf-8' : (mime[ext] || 'application/octet-stream');
-  const headers={'Content-Type':type};
-  if (isHtmlLike(f) || ['.xml','.txt'].includes(ext)) headers['X-Robots-Tag']='index, follow';
-  if (['.png','.jpg','.jpeg','.webp','.svg','.gif','.ico','.css','.js','.ttf','.woff','.woff2'].includes(ext)) headers['Cache-Control']='public, max-age=604800';
+  // 4순위: /page, /place의 끝 슬래시 공개 접속은 무조건 404.
+  // 예: /page/karaoke2/ , /place/room-flower-deer/
+  if (/^\/(page|place)\/.+\/$/i.test(decodedPath)) return notFound(res);
+
+  // 5순위: 예전 묶음 주소만 정상 대표 페이지로 보냄.
+  if (/^\/page\/karaoke$/i.test(decodedPath)) return redirect(res, '/page/karaoke1' + query);
+
+  const file = resolveFile(decodedPath);
+  if (!file) return notFound(res);
+
+  const ext = path.extname(file).toLowerCase();
+  const contentType = mime[ext] || 'application/octet-stream';
+  const headers = baseHeaders({ 'Content-Type': contentType });
+
+  if (['.png', '.jpg', '.jpeg', '.webp', '.svg', '.gif', '.ico', '.css', '.js', '.ttf', '.woff', '.woff2'].includes(ext)) {
+    headers['Cache-Control'] = 'public, max-age=604800';
+    delete headers['Pragma'];
+    delete headers['Expires'];
+  }
+
   res.writeHead(200, headers);
-  fs.createReadStream(f).pipe(res);
+  fs.createReadStream(file).pipe(res);
 });
-const HOST=process.env.HOST || '0.0.0.0';
-server.listen(PORT, HOST, ()=>console.log(`ALBAM09 STRICT CANONICAL SERVER 20260629 no-html no-slash running on http://${HOST}:${PORT}`));
+
+server.listen(PORT, HOST, () => {
+  console.log(`${VERSION} running on http://${HOST}:${PORT}`);
+});
