@@ -1,33 +1,28 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
+/* ALBAM09 FONT FIX 20260629
+   모바일/PC에서 같은 글씨체가 나오도록 누락된 로컬 폰트 호출을 제거하고
+   웹폰트 Jua 기준으로 마지막 cascade까지 강제합니다.
+*/
 :root{
   --albam09-font-main:'Jua','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif!important;
   --albam-font-sans:var(--albam09-font-main)!important;
   --albam-font-display:var(--albam09-font-main)!important;
 }
-html,body{
+html,body,body *:not(svg):not(path),
+input,button,textarea,select,
+h1,h2,h3,h4,h5,h6,p,a,span,li,div,strong,b,em,small,label{
   font-family:var(--albam09-font-main)!important;
-  -webkit-text-size-adjust:100%!important;
-  text-size-adjust:100%!important;
   -webkit-font-smoothing:antialiased!important;
   text-rendering:optimizeLegibility!important;
 }
-body,body *:not(svg):not(path){
-  font-family:var(--albam09-font-main)!important;
-}
-input,button,textarea,select{
-  font-family:var(--albam09-font-main)!important;
+html,body{
+  -webkit-text-size-adjust:100%!important;
+  text-size-adjust:100%!important;
 }
 @media (max-width:768px){
   html,body,body *:not(svg):not(path){
     font-family:var(--albam09-font-main)!important;
-    -webkit-font-smoothing:antialiased!important;
-  }
-  body{letter-spacing:-0.015em!important;}
-  .cat-title,.cat-name,.card-title,.place-title,.place-name,.notice-title,.board-title,
-  h1,h2,h3,.hero-title,.section-title,.region-link,.nearby-btn,.quick-btn{
-    font-family:var(--albam09-font-main)!important;
-    font-weight:400!important;
   }
 }
