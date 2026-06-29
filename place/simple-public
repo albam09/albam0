@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="index,follow" name="robots"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<title>Simple : Public | 알밤09 업소 상세 리뉴얼</title>
+<meta content="Simple : Public 상세 정보, 광천동 · 금호동 룸, 영업시간, 오시는길, 예약번호, 이미지와 내부 연결을 확인하세요." name="description"/>
+<meta content="광천동·금호동Simple : Public, 광천동·금호동룸, 광주유흥, 광주노래방, 광주유흥주점, 알밤09, Simple : Public 예약" name="keywords"/>
+<link href="https://www.albam09.com/place/simple-public" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Simple : Public | 알밤09 업소 상세" property="og:title"/>
+<meta content="Simple : Public 상세 정보, 광천동 · 금호동 룸, 영업시간, 오시는길, 예약번호, 이미지와 내부 연결을 확인하세요." property="og:description"/>
+<meta content="https://www.albam09.com/place/simple-public" property="og:url"/>
+<meta content="https://www.albam09.com/%EC%97%85%EC%86%8C%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%A0%80%EC%9E%A5/%EA%B4%91%EC%B2%9C%EB%8F%99_%EA%B8%88%ED%98%B8%EB%8F%99/%EC%8B%AC%ED%94%8C%ED%8D%BC%EB%B8%94%EB%A6%AD/3.webp" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="../img/favicon/32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../css/detail-renew.css?ver=20260519" rel="stylesheet"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Simple : Public","url":"https://www.albam09.com/place/simple-public","image":["https://www.albam09.com/%EC%97%85%EC%86%8C%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%A0%80%EC%9E%A5/%EA%B4%91%EC%B2%9C%EB%8F%99_%EA%B8%88%ED%98%B8%EB%8F%99/%EC%8B%AC%ED%94%8C%ED%8D%BC%EB%B8%94%EB%A6%AD/3.webp","https://www.albam09.com/%EC%97%85%EC%86%8C%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%A0%80%EC%9E%A5/%EA%B4%91%EC%B2%9C%EB%8F%99_%EA%B8%88%ED%98%B8%EB%8F%99/%EC%8B%AC%ED%94%8C%ED%8D%BC%EB%B8%94%EB%A6%AD/3.webp","https://www.albam09.com/%EC%97%85%EC%86%8C%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%A0%80%EC%9E%A5/%EA%B4%91%EC%B2%9C%EB%8F%99_%EA%B8%88%ED%98%B8%EB%8F%99/%EC%8B%AC%ED%94%8C%ED%8D%BC%EB%B8%94%EB%A6%AD/3.webp","https://www.albam09.com/%EC%97%85%EC%86%8C%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%A0%80%EC%9E%A5/%EA%B4%91%EC%B2%9C%EB%8F%99_%EA%B8%88%ED%98%B8%EB%8F%99/%EC%8B%AC%ED%94%8C%ED%8D%BC%EB%B8%94%EB%A6%AD/room001.jpg"],"telephone":"050371528028","address":{"@type":"PostalAddress","addressLocality":"광천동 · 금호동","streetAddress":"광주 서구 치평동"},"description":"상세 설명 준비 중입니다.","areaServed":"광천동 · 금호동"}</script>
+<script defer="" src="../js/site-search.js?ver=20260519"></script>
+<script defer="" src="../js/detail-renew.js?ver=20260519"></script>
+<meta content="https://www.albam09.com/%EC%97%85%EC%86%8C%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%A0%80%EC%9E%A5/%EA%B4%91%EC%B2%9C%EB%8F%99_%EA%B8%88%ED%98%B8%EB%8F%99/%EC%8B%AC%ED%94%8C%ED%8D%BC%EB%B8%94%EB%A6%AD/3.webp" name="twitter:image"/><style id="albam09-search-position-h1-font-fix">
+/* 20260622: 통합검색창을 index와 동일하게 히어로 아래/목록 위에 고정하고 H1을 둥근 최신 한글 웹폰트로 보강 */
+main > .global-place-search{
+  max-width:980px!important;
+  width:calc(100% - 32px)!important;
+  margin:22px auto 34px!important;
+  padding:0!important;
+  position:relative!important;
+  z-index:5!important;
+}
+main > section[title] + .global-place-search{
+  margin-top:22px!important;
+}
+.global-place-search__form,
+.global-place-search__input,
+.global-place-search__button{
+  font-family:var(--albam09-font-main)!important;
+}
+.global-place-search__button{
+  font-weight:850!important;
+}
+main section[title] h1,
+section[title] h1,
+main h1{
+  font-family:var(--albam09-font-main)!important;
+  font-weight:400!important;
+  letter-spacing:-.025em!important;
+  text-rendering:optimizeLegibility!important;
+}
+main section[title] h1,
+section[title] h1{
+  font-size:clamp(1.85rem,4.25vw,3.15rem)!important;
+  line-height:1.15!important;
+}
+@media (max-width:640px){
+  main > .global-place-search{width:calc(100% - 22px)!important;margin:18px auto 28px!important;}
+  main section[title] h1,section[title] h1{font-size:clamp(2.02rem,9.2vw,2.72rem)!important;line-height:1.12!important;}
+}
+</style>
+<link href="../css/albam09-local-font.css?v=20260622-final" rel="stylesheet"/><link href="../css/albam09-final-force.css?v=20260622g-nav-nearest" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/footer-contact-20260626.css?v=20260626a"/>
+
+<style id="cloudtype-local-safe-fallback">
+html{font-size:16px}body{margin:0;background:#fff;color:#181525}a{color:inherit;text-decoration:none}header{max-width:1180px;margin:54px auto 22px;padding:0 18px}header>a{display:inline-flex;align-items:center;gap:12px;color:#9b3cff;font-weight:900;font-size:clamp(1.7rem,3vw,2.6rem)}header svg{width:42px;height:42px}.area-wrap{max-width:1180px;margin:0 auto 36px;padding:0 18px}.area-list ul{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}.area-list a{display:flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border:1px solid #e7e4ec;border-radius:10px;background:#fff;font-weight:900;box-shadow:0 4px 14px rgba(0,0,0,.04)}.area-list .current a{background:linear-gradient(135deg,#9b49ff,#8233e6);color:#fff;border-color:transparent}main{max-width:1180px;margin:0 auto;padding:0 18px}main>section[title]{border-radius:18px;background:linear-gradient(135deg,#8c00b5,#ef2363);color:#fff;text-align:center;padding:82px 38px;margin:0 auto 42px;box-shadow:0 14px 34px rgba(89,25,126,.18)}main>section[title] h1{font-size:clamp(3rem,6vw,5.2rem);line-height:1.08;margin:0 0 26px}.hero-keyline{font-size:clamp(1.2rem,2vw,1.55rem);font-weight:900}.hero-desc{font-size:clamp(1.08rem,1.7vw,1.35rem);font-weight:800;line-height:1.8}.global-place-search{max-width:1080px;margin:24px auto 54px}.global-place-search__form{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid #ead9ff;border-radius:18px;box-shadow:0 10px 28px rgba(67,28,91,.12);padding:10px}.global-place-search__input{flex:1;border:0;outline:0;font-size:1.1rem;font-weight:800;padding:14px}.global-place-search__button{border:0;border-radius:14px;background:#150820;color:#fff;font-size:1.1rem;font-weight:900;padding:14px 24px}section[list] h2{text-align:center;font-size:clamp(2.1rem,4vw,3.2rem);margin:28px 0;color:#a100b5}section[list] [wrapper]{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}section[list] ul{list-style:none;min-height:130px;margin:0;padding:30px;border-radius:18px;background:#fff;box-shadow:0 16px 32px rgba(100,44,125,.12);border:1px solid #f1e6fb;overflow:hidden}section[list] h3{text-align:center;font-size:1.7rem;margin:0 0 16px;color:#9b009a}section[list] li{font-size:1.05rem;font-weight:800;color:#8d8da0}.nearest-float,.nearby-floating,.nearby-fab{position:fixed!important;right:24px!important;bottom:24px!important;z-index:9999!important}
+@media(max-width:700px){header{margin-top:42px}.area-wrap{margin-bottom:28px}.area-list ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.area-list a{min-height:44px;padding:0 8px;font-size:1rem}main>section[title]{padding:56px 20px;margin-bottom:28px}main>section[title] h1{font-size:2.65rem}.global-place-search__form{border-radius:15px}.global-place-search__button{padding:12px 15px}section[list] [wrapper]{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}section[list] ul{padding:18px 10px;min-height:104px;border-radius:16px}section[list] h3{font-size:1.2rem}.nearest-float,.nearby-floating,.nearby-fab{right:16px!important;bottom:18px!important}}
+</style>
+
+<link rel="stylesheet" href="../css/albam09-origin-font-unify.css?v=20260629-origin-unify">
+</head>
+<body class="detail-renew">
+<header class="detail-hero" style="--cover:url('../업소이미지저장/광천동_금호동/심플퍼블릭/1.webp')">
+<div class="detail-hero__inner">
+<div class="detail-brand">09</div>
+<div class="detail-kicker">ALBAM09 RENEWED DETAIL</div>
+<h1>심플퍼블릭</h1>
+<p class="detail-hero__sub">광천동 · 금호동 · 룸 · Simple : Public 상세페이지</p>
+<div class="detail-badges">
+<span class="detail-badge">📍 광천동 · 금호동</span>
+<span class="detail-badge">⏰ 오후 12시까지</span>
+<span class="detail-badge">☎ 050371528028</span>
+</div>
+<div class="detail-cta">
+<a class="detail-btn primary" href="tel:050371528028">📞 예약문의 전화</a>
+<a class="detail-btn dark" href="https://www.albam09.com/page/karaoke2">지역 목록으로</a>
+<a class="detail-btn dark" href="/">전체 업소</a>
+</div>
+</div>
+<div class="detail-down">⌄</div>
+</header>
+<main class="detail-main"><section aria-label="업소 통합검색" class="global-place-search" role="search"><form autocomplete="off" class="global-place-search__form"><span aria-hidden="true" class="global-place-search__icon">⌕</span><input aria-label="업소명 또는 지역명 검색" class="global-place-search__input" inputmode="search" placeholder="업소명·지역명 검색 후 바로 이동" type="search"/><button class="global-place-search__button" type="submit">검색</button></form><div class="global-place-search__suggestions" hidden=""></div></section>
+<section class="detail-titlebar">
+<h2>Simple : Public</h2>
+<div class="detail-clock" data-detail-clock="">예약 상담 가능 여부를 확인 중입니다</div>
+</section>
+<section aria-label="기본 정보" class="detail-section">
+<h2><span>01</span> 기본 정보</h2>
+<div class="detail-grid">
+<div class="detail-info-card"><span class="key">업소명</span><span class="value">Simple : Public</span></div>
+<div class="detail-info-card"><span class="key">업종</span><span class="value">룸</span></div>
+<div class="detail-info-card"><span class="key">지역</span><span class="value">광천동 · 금호동</span></div>
+<div class="detail-info-card"><span class="key">영업시간</span><span class="value">오후 12시까지</span></div>
+<div class="detail-info-card"><span class="key">오시는길</span><span class="value">광주 서구 치평동</span></div>
+<div class="detail-info-card"><span class="key">예약번호</span><span class="value"><a href="tel:050371528028">050371528028</a></span></div>
+</div>
+</section>
+<section aria-label="예약 및 문의" class="detail-section">
+<h2><span>02</span> 예약 방문 안내</h2>
+<div class="detail-menu">
+<div class="detail-menu__item"><b>전화 예약</b><span>방문 전 예약번호로 현재 가능 시간과 상세 조건을 확인하세요.</span></div>
+<div class="detail-menu__item"><b>위치 확인</b><span>광주 서구 치평동 기준으로 안내됩니다. 정확한 위치는 예약 시 재확인하세요.</span></div>
+<div class="detail-menu__item"><b>가격/메뉴 문의</b><span>상세 주대와 메뉴는 업소별 변동 가능성이 있어 예약문의 기준으로 확인하도록 구성했습니다.</span></div>
+</div>
+<div class="detail-cta">
+<a class="detail-btn primary" href="tel:050371528028">📞 예약문의 전화</a>
+<a class="detail-btn dark" data-copy-phone="050371528028" href="#">번호 복사</a>
+</div>
+</section>
+<section aria-label="상세 설명" class="detail-section">
+<h2><span>03</span> Simple : Public 소개</h2>
+<p class="detail-copy">상세 설명 준비 중입니다.</p>
+<p class="detail-notice">광천동 · 금호동 Simple : Public 상세페이지는 알밤09 내부 업소 연결 기준으로 통일된 리뉴얼 상세 레이아웃이 적용되었습니다.</p>
+</section>
+<section aria-label="이미지" class="detail-section">
+<h2><span>04</span> 이미지 / 룸 인테리어</h2>
+<div class="detail-gallery"><a href="../업소이미지저장/광천동_금호동/심플퍼블릭/3.webp" rel="noopener" target="_blank"><img alt="심플퍼블릭 3번 이미지 - 3.webp" decoding="async" loading="lazy" src="../업소이미지저장/광천동_금호동/심플퍼블릭/3.webp"/></a><a href="../업소이미지저장/광천동_금호동/심플퍼블릭/2.webp" rel="noopener" target="_blank"><img alt="심플퍼블릭 2번 이미지 - 2.webp" decoding="async" loading="lazy" src="../업소이미지저장/광천동_금호동/심플퍼블릭/2.webp"/></a><a href="../업소이미지저장/광천동_금호동/심플퍼블릭/1.webp" rel="noopener" target="_blank"><img alt="심플퍼블릭 1번 이미지 - 1.webp" decoding="async" loading="eager" src="../업소이미지저장/광천동_금호동/심플퍼블릭/1.webp"/></a><a href="../업소이미지저장/광천동_금호동/심플퍼블릭/room001.jpg" rel="noopener" target="_blank"><img alt="심플퍼블릭 4번 이미지 - room001.jpg" decoding="async" loading="lazy" src="../업소이미지저장/광천동_금호동/심플퍼블릭/room001.jpg"/></a></div>
+</section>
+<section aria-label="오시는 길" class="detail-section">
+<h2><span>05</span> 오시는 길</h2>
+<div class="detail-grid">
+<div class="detail-info-card"><span class="key">지역</span><span class="value">광천동 · 금호동</span></div>
+<div class="detail-info-card"><span class="key">안내 주소</span><span class="value">광주 서구 치평동</span></div>
+</div>
+<div class="detail-map-actions">
+<a class="detail-btn primary" href="https://map.naver.com/v5/search/%EA%B4%91%EC%B2%9C%EB%8F%99%C2%B7%EA%B8%88%ED%98%B8%EB%8F%99%20Simple%20%3A%20Public%20%EA%B4%91%EC%A3%BC%20%EC%84%9C%EA%B5%AC%20%EC%B9%98%ED%8F%89%EB%8F%99" rel="noopener" target="_blank">네이버 지도 검색</a>
+<a class="detail-btn dark" href="https://www.albam09.com/page/karaoke2">광천동 · 금호동 업소 더보기</a>
+</div>
+</section>
+<section aria-label="내부 연결" class="detail-section">
+<h2><span>06</span> 내부 연결</h2>
+<div class="detail-related">
+<a href="/">전체 업소 목록</a><a href="art-gallery">미술관</a><a href="https://www.albam09.com/page/karaoke2">광천동 · 금호동 목록</a><a href="fox-songhall">다음 업소 · 여우노래홀</a><a href="salute">샬루트</a><a href="heart-songhall">이전 업소 · 심쿵노래홀</a></div>
+</section>
+<footer class="detail-footer site-footer-contact">
+<p>© ALBAM09 · 업소 상세페이지</p>
+
+<div class="footer-sns-icons" aria-label="SNS 문의 링크">
+<a class="sns-kakao" href="#" data-sns="kakao" aria-label="카카오톡 연결 준비" onclick="return false;">톡</a>
+<a class="sns-insta" href="#" data-sns="instagram" aria-label="인스타그램 연결 준비" onclick="return false;">IG</a>
+<a class="sns-telegram" href="https://telegram.me/medic0111" target="_blank" rel="noopener" data-sns="telegram" aria-label="텔레그램 문의">TG</a>
+</div>
+</footer>
+</main>
+<div class="detail-sticky-call">
+<a href="tel:050371528028">📞 050371528028</a>
+<a href="https://www.albam09.com/page/karaoke2">목록 보기</a>
+</div>
+<script defer="" src="../js/site-search.js"></script><script defer="" src="../js/local-file-links.js"></script><script defer src="../js/albam09-ui-fix.js?v=20260622b"></script><script defer="" src="../js/albam09-random-order.js?v=20260622b-live-random"></script>
+</body>
+</html>
+<style id="albam09-h1-index-size-sync-20260622">
+/* 20260622: index H1과 모든 지역/상세 페이지 H1 글씨 크기를 같은 기준으로 강제 통일 */
+main section[title] h1,
+section[title] h1,
+.place-hero h1{
+  font-family:var(--albam09-font-main)!important;
+  font-size:clamp(1.85rem,4.25vw,3.15rem)!important;
+  line-height:1.15!important;
+  font-weight:400!important;
+  letter-spacing:-.025em!important;
+}
+@media (max-width:640px){
+  main section[title] h1,
+  section[title] h1,
+  .place-hero h1{
+    font-size:clamp(2.02rem,9.2vw,2.72rem)!important;
+    line-height:1.12!important;
+  }
+}
+</style>
+<style id="albam09-final-font-size-last">
+@font-face{font-family:'Albam09Cute';src:url('../fonts/Albam09Cute.ttf?v=20260622-font-final') format('truetype');font-weight:100 900;font-style:normal;font-display:block;}
+:root{--albam09-font-main:'Albam09Cute',sans-serif!important;--albam-font-sans:var(--albam09-font-main)!important;--albam-font-display:var(--albam09-font-main)!important;}
+html,body{font-family:var(--albam09-font-main)!important;font-size:20px!important;}
+html body,html body *,html body *::before,html body *::after{font-family:var(--albam09-font-main)!important;}
+p,li,a,button,input,textarea,select,label,.hero-desc,.hero-keyline,.detail-copy,.detail-notice,.business-description-item,.seo-article-card p{font-size:1.12rem!important;line-height:1.62!important;}
+h1,.daum-wm-title,.detail-hero h1,main section[title] h1,section[title] h1,.place-hero h1{font-size:clamp(2.10rem,4.65vw,3.45rem)!important;line-height:1.13!important;font-weight:400!important;}
+h2,.detail-section h2,section[list] h2,.business-description-section h2{font-size:clamp(1.55rem,2.85vw,2.10rem)!important;font-weight:400!important;}
+h3,section[list] h3,.seo-article-card h3{font-size:clamp(1.22rem,2.25vw,1.58rem)!important;font-weight:400!important;}
+</style>
