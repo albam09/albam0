@@ -11,9 +11,11 @@ const mime = {
   '.svg': 'image/svg+xml', '.gif': 'image/gif', '.ttf': 'font/ttf', '.woff': 'font/woff', '.woff2': 'font/woff2'
 };
 
-function safeDecode(u) {
-  try { return decodeURIComponent(u); } catch { return u; }
-}
+function safeDecode(u) { try { return decodeURIComponent(u); } catch { return u; } }
+function stripEndSlash(p) { return p.length > 1 ? p.replace(/\/+$/, '') : p; }
+function noExtPath(p) { return p.replace(/\.html$/i, ''); }
+function permanentRedirect(res, location) { res.writeHead(301, { Location: location }); res.end(); }
+function gone(res) { res.writeHead(410, { 'Content-Type': 'text/plain; charset=utf-8', 'X-Robots-Tag': 'noindex, nofollow' }); res.end('Gone'); }
 
 function cleanPath(urlPath) {
   const noQuery = urlPath.split('?')[0].split('#')[0];
@@ -27,8 +29,7 @@ function loadRedirects() {
   const file = path.join(ROOT, '_redirects');
   const map = new Map();
   if (!fs.existsSync(file)) return map;
-  const lines = fs.readFileSync(file, 'utf8').split(/\r?\n/);
-  for (const raw of lines) {
+  for (const raw of fs.readFileSync(file, 'utf8').split(/\r?\n/)) {
     const line = raw.trim();
     if (!line || line.startsWith('#')) continue;
     const parts = line.split(/\s+/);
@@ -41,30 +42,13 @@ function loadRedirects() {
 }
 const redirects = loadRedirects();
 
-function permanentRedirect(res, location) {
-  res.writeHead(301, { Location: location });
-  res.end();
-}
-function gone(res) {
-  res.writeHead(410, { 'Content-Type': 'text/plain; charset=utf-8', 'X-Robots-Tag': 'noindex, nofollow' });
-  res.end('Gone');
-}
-
-
 function findFile(requestPath) {
   let rel = cleanPath(requestPath);
   if (!rel) return null;
-
-  const candidates = [];
-  candidates.push(rel);
-
-  // /page/karaoke1.html -> /page/karaoke1.html
+  const candidates = [rel];
   if (!path.extname(rel)) candidates.push(rel + '.html');
-
-  // /page/karaoke1.html -> /page/karaoke1/index.html
   if (rel.endsWith(path.sep) || rel.endsWith('/')) candidates.push(path.join(rel, 'index.html'));
   if (!path.extname(rel)) candidates.push(path.join(rel, 'index.html'));
-
   for (const c of candidates) {
     const full = path.join(ROOT, c);
     if (!full.startsWith(ROOT)) continue;
@@ -77,30 +61,30 @@ const server = http.createServer((req, res) => {
   const requestUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
   const originalPath = requestUrl.pathname;
   const decodedPath = safeDecode(originalPath);
+  const query = requestUrl.search || '';
 
-  // Removed report page: tell crawlers it is intentionally gone.
-  if (/^\/page\/gwangju-yuheng-sites\/?(?:\.html)?$/i.test(decodedPath)) {
-    gone(res);
-    return;
+  // Deleted report page: tell crawlers it is intentionally gone.
+  if (/^\/page\/gwangju-yuheng-sites\/?(?:\.html)?$/i.test(decodedPath)) return gone(res);
+
+  // Main page canonical URL is only '/'.
+  if (/^\/(?:index|\.index)\.html?$/i.test(decodedPath)) return permanentRedirect(res, '/' + query);
+
+  // Public canonical URLs must be extensionless: /page/karaoke1, /place/room-flower-deer.
+  // The .html part is only the physical file name on the server.
+  if (/\.html$/i.test(decodedPath) && !/^\/(google|naver)/i.test(decodedPath)) {
+    return permanentRedirect(res, noExtPath(decodedPath) + query);
   }
 
-  // Canonical page URLs: use .html only. Old slash/no-extension URLs redirect to the final URL.
-  const pageMatch = decodedPath.match(/^\/page\/(karaoke[1-8]|etc)\/?$/i);
-  if (pageMatch) {
-    permanentRedirect(res, `/page/${pageMatch[1]}.html`);
-    return;
+  // Remove trailing slash from public page/place URLs.
+  if (decodedPath.length > 1 && /\/$/.test(decodedPath)) {
+    return permanentRedirect(res, stripEndSlash(decodedPath) + query);
   }
-  if (/^\/page\/karaoke\/?$/i.test(decodedPath)) {
-    permanentRedirect(res, '/page/karaoke1.html');
-    return;
-  }
+
+  // Old group alias.
+  if (/^\/page\/karaoke$/i.test(decodedPath)) return permanentRedirect(res, '/page/karaoke1' + query);
 
   const redirectTarget = redirects.get(originalPath) || redirects.get(decodedPath);
-  if (redirectTarget) {
-    res.writeHead(301, { Location: redirectTarget });
-    res.end();
-    return;
-  }
+  if (redirectTarget) return permanentRedirect(res, redirectTarget + query);
 
   const file = findFile(originalPath);
   if (!file) {
@@ -108,12 +92,8 @@ const server = http.createServer((req, res) => {
     res.end('<!doctype html><meta charset="utf-8"><title>404</title><h1>페이지를 찾을 수 없습니다</h1>');
     return;
   }
-
   const ext = path.extname(file).toLowerCase();
-  const headers = {
-    'Content-Type': mime[ext] || 'application/octet-stream',
-    'X-Robots-Tag': 'index, follow'
-  };
+  const headers = { 'Content-Type': mime[ext] || 'application/octet-stream', 'X-Robots-Tag': 'index, follow' };
   if (['.png', '.jpg', '.jpeg', '.webp', '.svg', '.gif', '.ico', '.css', '.js', '.ttf', '.woff', '.woff2'].includes(ext)) {
     headers['Cache-Control'] = 'public, max-age=604800';
   }
