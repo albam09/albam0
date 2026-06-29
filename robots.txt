@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://www.albam09.com/sitemap.xml
-Sitemap: https://www.albam09.com/image-sitemap.xml
-
-#DaumWebMasterTool:d700e6749b8f30382485d78c765b3e5842aaa52f13cf2f9e8567cb82192dbe14:ydJvY/1CAZDOj8ei4EOk4A==
