@@ -70,14 +70,20 @@ const server = http.createServer((req, res) => {
   if (/^\/(?:index|\.index)\.html?$/i.test(decodedPath)) return permanentRedirect(res, '/' + query);
 
   // Public canonical URLs must be extensionless: /page/karaoke1, /place/room-flower-deer.
-  // The .html part is only the physical file name on the server.
+  // The .html part is only the physical file name on the server and must not be a public URL.
+  // Keep Google/Naver verification files accessible; /index.html is handled above and redirects to '/'.
   if (/\.html$/i.test(decodedPath) && !/^\/(google|naver)/i.test(decodedPath)) {
-    return permanentRedirect(res, noExtPath(decodedPath) + query);
+    res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8', 'X-Robots-Tag': 'noindex, follow' });
+    res.end('<!doctype html><meta charset="utf-8"><title>404</title><h1>페이지를 찾을 수 없습니다</h1>');
+    return;
   }
 
-  // Remove trailing slash from public page/place URLs.
+  // Strict canonical rule: trailing slash URLs are not valid pages.
+  // Example: /page/karaoke2 is OK, but /page/karaoke2/ returns 404.
   if (decodedPath.length > 1 && /\/$/.test(decodedPath)) {
-    return permanentRedirect(res, stripEndSlash(decodedPath) + query);
+    res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8', 'X-Robots-Tag': 'noindex, follow' });
+    res.end('<!doctype html><meta charset="utf-8"><title>404</title><h1>페이지를 찾을 수 없습니다</h1>');
+    return;
   }
 
   // Old group alias.
