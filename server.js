@@ -56,8 +56,8 @@ function gone(res) {
 }
 
 function redirect(res, location) {
-  // 302로 둔다. 이전 301 캐시가 브라우저에 남아 있어도 앞으로 새 리디렉션을 강하게 캐시하지 않게 하기 위함.
-  res.writeHead(302, baseHeaders({ Location: location }));
+  // 301 영구 리디렉션으로 변경: SEO 최적화를 위해 권한 전달
+  res.writeHead(301, baseHeaders({ Location: location }));
   res.end();
 }
 
@@ -109,11 +109,17 @@ const server = http.createServer((req, res) => {
   if (/^\/page\/gwangju-yuheng-sites(?:\.html|\/)?$/i.test(decodedPath)) return gone(res);
 
   // 2순위: 메인만 / 로 고정. /index.html 은 / 로 보냄.
-  if (/^\/(?:index|\.index)\.html?$/i.test(decodedPath)) return redirect(res, '/' + query);
+  if (/^\/(index|\.index)\.html?$/i.test(decodedPath)) return redirect(res, '/' + query);
+  
+  // 2-1순위: /index.html/ 형태의 끝 슬래시도 정규화
+  if (/^\/(index|\.index)\.html\/$/i.test(decodedPath)) return redirect(res, '/' + query);
 
   // 3순위: /page, /place의 .html 공개 접속은 무조건 404.
   // 구글/네이버 소유확인 파일은 page/place가 아니므로 영향 없음.
   if (/^\/(page|place)\/.*\.html$/i.test(decodedPath)) return notFound(res);
+  
+  // 3-1순위: /page, /place의 .html?query 형태도 404
+  if (/^\/(page|place)\/[^\/]+\.html\?/i.test(decodedPath)) return notFound(res);
 
   // 4순위: /page, /place의 끝 슬래시 공개 접속은 무조건 404.
   // 예: /page/karaoke2/ , /place/room-flower-deer/

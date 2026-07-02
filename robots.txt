@@ -1,6 +1,10 @@
 User-agent: *
 Allow: /
 
+# 폴더형 URL만 허용 (.html 확장자 접근 차단)
+Disallow: /*.html$
+Disallow: /*.html?
+
 Sitemap: https://www.albam09.com/sitemap.xml
 Sitemap: https://www.albam09.com/image-sitemap.xml
 
